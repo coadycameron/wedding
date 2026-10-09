@@ -9,6 +9,33 @@ const persist=()=>{try{localStorage.setItem('venueJournalV1',JSON.stringify(stat
 const update=id=>state.updates[id]||{},venue=id=>venues.find(v=>v.id===id),isSaved=id=>state.favorites.includes(id);
 const img=(url,alt,attrs='')=>'<img src="'+esc(url)+'" alt="'+esc(alt)+'" loading="eager" decoding="async" '+attrs+'>';
 let activeVenue=null,activeTab='overview',map=null,markers={},compareMode='saved',toastTimer,photoVenue=null,photoIndex=0;
+const photoPositions={};
+function selectedPhoto(v){return (photoPositions[v.id]||0)%v.images.length}
+function photoBrowser(v,context){
+  const i=selectedPhoto(v),p=v.images[i],isCard=context==='card';
+  return '<div class="'+(isCard?'card-photo':'detail-cover')+' photo-browser" data-photo-browser="'+context+'" data-id="'+v.id+'">'+
+    '<button type="button" class="photo-canvas" data-action="photo" data-id="'+v.id+'" data-index="'+i+'" aria-label="Open '+esc(v.name)+' photos">'+img(p[0],p[1])+'</button>'+
+    (isCard?'<div class="card-label">'+esc(v.style.toUpperCase())+'</div>':
+      '<div class="detail-cover-text"><small>'+esc(v.region.toUpperCase())+' · '+esc(v.town.toUpperCase())+'</small><h2>'+esc(v.name)+'</h2></div>')+
+    '<button type="button" class="photo-inline-arrow photo-inline-prev" data-action="photo-step" data-id="'+v.id+'" data-delta="-1" aria-label="Previous photo of '+esc(v.name)+'">‹</button>'+
+    '<button type="button" class="photo-inline-arrow photo-inline-next" data-action="photo-step" data-id="'+v.id+'" data-delta="1" aria-label="Next photo of '+esc(v.name)+'">›</button>'+
+    '<button type="button" class="inline-photo-link" data-action="photo" data-id="'+v.id+'" data-index="'+i+'" aria-label="Open '+esc(v.name)+' photo gallery">View photos <span class="inline-photo-count">'+(i+1)+' / '+v.images.length+'</span> ↗</button>'+
+    (isCard?'<button type="button" class="heart '+(isSaved(v.id)?'saved':'')+'" data-action="favorite" data-id="'+v.id+'" aria-label="'+(isSaved(v.id)?'Remove saved venue':'Save venue')+'">'+(isSaved(v.id)?'♥':'♡')+'</button>':'')+
+    '</div>';
+}
+function changeInlinePhoto(id,delta){
+  const v=venue(id);if(!v)return;
+  photoPositions[id]=((selectedPhoto(v)+delta)%v.images.length+v.images.length)%v.images.length;
+  const i=selectedPhoto(v),p=v.images[i];
+  $$('[data-photo-browser][data-id="'+id+'"]').forEach(el=>{
+    const visual=$('.photo-canvas img',el);
+    visual.src=p[0];visual.alt=p[1];
+    $$('.photo-canvas,.inline-photo-link',el).forEach(button=>button.dataset.index=String(i));
+    const counter=$('.inline-photo-count',el);if(counter)counter.textContent=(i+1)+' / '+v.images.length;
+    el.classList.remove('photo-failed');
+  });
+}
+
 function notify(message){let t=$('#toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3000)}
 function fit(v,n){if(v.id==='wilsons'&&n>65&&n<=107)return 'conditional';if(v.id==='oceanstone'&&n>80&&n<=125)return 'conditional';return n>v.capacity?'no':'good'}
 function fitText(v,n){let x=fit(v,n);return x==='no'?'Exceeds published capacity':x==='conditional'?(v.id==='wilsons'?'Requires overnight occupancy':'Seated capacity unconfirmed'):'Fits published capacity'}
@@ -21,8 +48,7 @@ function amountNote(v){if(Number(update(v.id).quote)>0)return 'Your entered venu
 return {unknown:'2027 wedding fee unknown',historical:'Historical 2025 weekend minimum', 'venue-space':'Event-space rate, wedding unconfirmed',published:'Advertised venue rental', 'tax-included':'Package with two-night stay'}[v.priceType]}
 function card(v){
 let f=fit(v,state.guestCount);
-return '<article class="venue-card" data-id="'+v.id+'"><div class="card-photo" data-action="detail" data-id="'+v.id+'">'+img(v.hero,v.name)+
-'<div class="card-label">'+esc(v.style.toUpperCase())+'</div><button class="heart '+(isSaved(v.id)?'saved':'')+'" data-action="favorite" data-id="'+v.id+'" aria-label="Save venue">'+(isSaved(v.id)?'♥':'♡')+'</button></div>'+
+return '<article class="venue-card" data-id="'+v.id+'">'+photoBrowser(v,'card')+
 '<div class="card-body"><div class="card-region">'+esc(v.region.toUpperCase())+' · '+esc(v.town.toUpperCase())+'</div><h3 class="card-name">'+esc(v.name)+'</h3><p class="card-text">'+esc(v.score)+'</p>'+
 '<div class="card-facts"><span class="fact">♧ Up to '+v.capacity+'*</span><span class="fact">⌂ '+(v.beds?v.beds+' stay':'On-site stays')+'</span></div>'+
 '<div class="card-price"><div><small>STARTING FIGURE</small><strong>'+esc(amount(v))+'</strong><span>'+esc(amountNote(v))+'</span></div><button class="card-open" data-action="detail" data-id="'+v.id+'" aria-label="View venue">↗</button></div></div>'+
@@ -59,7 +85,7 @@ $('#detail-tab-content').innerHTML=html}
 function openDetail(id,tab='overview'){
 let v=venue(id);if(!v)return;activeVenue=v;activeTab=tab;
 let u=update(id);
-$('#detail-content').innerHTML='<div class="detail-cover">'+img(v.hero,v.name)+'<div class="detail-cover-text"><small>'+esc(v.region.toUpperCase())+' · '+esc(v.town.toUpperCase())+'</small><h2>'+esc(v.name)+'</h2></div></div>'+
+$('#detail-content').innerHTML=photoBrowser(v,'detail')+
 '<div class="detail-inner"><div class="detail-tags"><span>'+esc(v.archetype)+'</span><span>Up to '+v.capacity+'*</span><span>'+esc(v.stayFlag)+'</span><span>'+esc(fitText(v,state.guestCount))+'</span></div>'+
 '<p class="detail-intro">'+esc(v.score)+'</p><div class="detail-stat-grid">'+
 '<div class="detail-stat"><small>Published capacity</small><strong>'+v.capacity+' guests*</strong><span>Confirm seated layout</span></div>'+
@@ -89,7 +115,14 @@ $('#photo-counter').textContent=(photoIndex+1)+' / '+v.images.length;
 $('#photo-source').href=p[2]||v.site;
 $('#photo-source').setAttribute('aria-label','View original source page for '+p[1]);
 }
-function advancePhoto(delta){if($('#photo-dialog').open){photoIndex+=delta;renderPhoto()}}
+function advancePhoto(delta){
+if($('#photo-dialog').open){
+  photoIndex+=delta;
+  renderPhoto();
+  photoPositions[photoVenue]=photoIndex;
+  changeInlinePhoto(photoVenue,0);
+}
+}
 function renderShortlist(){
 let arr=venues.filter(v=>isSaved(v.id)).sort((a,b)=>a.rank-b.rank);
 $('#shortlist-cards').innerHTML=arr.length?arr.map(v=>{
@@ -160,7 +193,8 @@ if(act==='favorite'){e.stopPropagation();toggleSave(id)}
 if(act==='detail')openDetail(id);
 if(act==='mapfocus')focusMap(id);
 if(act==='email')draftEnquiry(venue(id));
-if(act==='photo'){photoVenue=id;photoIndex=+a.dataset.index;renderPhoto();$('#photo-dialog').showModal()}
+if(act==='photo'){photoVenue=id;photoIndex=+a.dataset.index;renderPhoto();photoPositions[id]=photoIndex;changeInlinePhoto(id,0);$('#photo-dialog').showModal()}
+if(act==='photo-step'){changeInlinePhoto(id,Number(a.dataset.delta))}
 return}
 if(e.target.id==='detail-budget'){closeDialog('#venue-dialog');openBudget()}
 if(e.target.id==='save-notes'){if(activeVenue){$$('[data-field]',$('#venue-dialog')).forEach(saveField);renderGrid();notify('Notes saved on this device')}}});

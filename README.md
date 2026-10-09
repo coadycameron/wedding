@@ -68,4 +68,4 @@ Photographs are sourced from the venues' public websites. Eight albums now conta
 * `assets/`: Optimized venue images for robust preview
 
 There is no analytics, tracking, account login, server-side persistence or automatic booking.
-\n### Expanded gallery browsing\n\nEach venue now has an 11–13-image album covering ceremony and reception spaces, coastal views, and accommodations. Use the on-screen arrows or left/right arrow keys to browse; View photo source opens the original page.\n
+\n### Expanded gallery browsing\n\nEach venue now has an 11–13-image album covering ceremony and reception spaces, coastal views, and accommodations. Use the on-screen arrows or left/right arrow keys to browse; View photo source opens the original page.\n\n### Quick photo browsing\n\nOn any venue card or venue profile header, hover the picture to show previous and next photo arrows (always shown on touchscreens). Click the photo or the View photos link to open the larger gallery at the selected picture. Browse the full-screen gallery using arrows or keyboard left/right.\n\nTypography was increased throughout the website for easier reading on desktop and mobile.\n
