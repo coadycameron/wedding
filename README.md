@@ -57,7 +57,7 @@ Pricing types are deliberately kept separate:
 
 Each venue profile has links to the official venue websites, booking packages, and published policies that informed the research, reviewed October 8, 2026.
 
-Photographs are sourced from the venues' public websites. Optimized hero images are maintained in `assets/` solely as reference material for private wedding planning, and galleries credit the original property/photographers where possible. The venue owners and photographers retain their copyrights. **No rights to re-publish or commercialize these images are asserted. Do not publish this website publicly without checking image usage permissions or replacing the images with licensed materials.**
+Photographs are sourced from the venues' public websites. Eight albums now contain 11–13 photos each, optimized and stored locally under the assets folder. Additional image origins are indexed in assets/photo-sources.json, and the viewer links directly to source pages.  Optimized hero images are maintained in `assets/` solely as reference material for private wedding planning, and galleries credit the original property/photographers where possible. The venue owners and photographers retain their copyrights. **No rights to re-publish or commercialize these images are asserted. Do not publish this website publicly without checking image usage permissions or replacing the images with licensed materials.**
 
 ## Repository structure
 
@@ -68,3 +68,4 @@ Photographs are sourced from the venues' public websites. Optimized hero images 
 * `assets/`: Optimized venue images for robust preview
 
 There is no analytics, tracking, account login, server-side persistence or automatic booking.
+\n### Expanded gallery browsing\n\nEach venue now has an 11–13-image album covering ceremony and reception spaces, coastal views, and accommodations. Use the on-screen arrows or left/right arrow keys to browse; View photo source opens the original page.\n

@@ -8,7 +8,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const persist=()=>{try{localStorage.setItem('venueJournalV1',JSON.stringify(state))}catch(e){notify('Storage full. Export your notes.')}};
 const update=id=>state.updates[id]||{},venue=id=>venues.find(v=>v.id===id),isSaved=id=>state.favorites.includes(id);
 const img=(url,alt,attrs='')=>'<img src="'+esc(url)+'" alt="'+esc(alt)+'" loading="eager" decoding="async" '+attrs+'>';
-let activeVenue=null,activeTab='overview',map=null,markers={},compareMode='saved',toastTimer;
+let activeVenue=null,activeTab='overview',map=null,markers={},compareMode='saved',toastTimer,photoVenue=null,photoIndex=0;
 function notify(message){let t=$('#toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3000)}
 function fit(v,n){if(v.id==='wilsons'&&n>65&&n<=107)return 'conditional';if(v.id==='oceanstone'&&n>80&&n<=125)return 'conditional';return n>v.capacity?'no':'good'}
 function fitText(v,n){let x=fit(v,n);return x==='no'?'Exceeds published capacity':x==='conditional'?(v.id==='wilsons'?'Requires overnight occupancy':'Seated capacity unconfirmed'):'Fits published capacity'}
@@ -53,7 +53,7 @@ let html='';
 if(activeTab==='overview')html='<div class="detail-columns"><div><section class="detail-section"><h3>Setting & atmosphere</h3><p>'+esc(v.overview)+'</p></section><section class="detail-section"><h3>Ceremony</h3><p>'+esc(v.ceremony)+'</p></section><section class="detail-section"><h3>Reception</h3><p>'+esc(v.reception)+'</p></section></div><div><section class="detail-section"><h3>Overnight experience</h3><p>'+esc(v.stay)+'</p><div class="alert">'+esc(v.stayRule)+'</div></section><section class="detail-section"><h3>What makes us cautious</h3>'+list(v.risks,'risks')+'</section></div></div>';
 if(activeTab==='inclusions')html='<div class="detail-columns"><section class="detail-section"><h3>Included or advertised</h3>'+list(v.included)+'</section><section class="detail-section"><h3>Budget for separately</h3>'+list(v.extra,'risks')+'</section></div><div class="alert">Published offerings are not a September 2027 contract. Confirm every inclusion in writing.</div>';
 if(activeTab==='pricing')html='<div class="detail-columns"><div><h3>What is publicly priced</h3><p style="font-size:21px;font-weight:800;color:var(--ink)">'+esc(amount(v))+'</p><p>'+esc(v.baseLabel)+'</p><div class="alert">'+esc(v.priceType==='historical'?'The 2027 wedding guide does not publish prices. This is historical 2025 pricing, not a September 2027 quotation.':v.priceType==='venue-space'?'The $4,500 figure is a venue-space package, not confirmed as the 2027 wedding fee.':'Additional guest costs or overnight obligations may apply.')+'</div></div><div><h3>What remains unknown</h3>'+list(v.extra,'risks')+'<p>Enter the actual venue fee in Your planning notes below for better comparisons.</p></div></div><button class="btn btn-ink" id="detail-budget">Open budget explorer ↗</button>';
-if(activeTab==='gallery')html='<div class="gallery-grid">'+v.images.map((p,i)=>'<button class="gallery-tile" data-action="photo" data-id="'+v.id+'" data-index="'+i+'">'+img(p[0],p[1])+'<span>'+esc(p[1])+' ↗</span></button>').join('')+'</div><p class="source-caption">Image credit: '+esc(v.imageCredit)+' Images load from the original venue website and may change.</p><div class="source-links"><a href="'+esc(v.site)+'" target="_blank" rel="noopener noreferrer">Visit the full official gallery ↗</a></div>';
+if(activeTab==='gallery')html='<div class="gallery-heading"><h3>'+v.images.length+' photos of '+esc(v.name)+'</h3><span>Open a photo to browse the album</span></div><div class="gallery-grid">'+v.images.map((p,i)=>'<button class="gallery-tile" data-action="photo" data-id="'+v.id+'" data-index="'+i+'" aria-label="View photo '+(i+1)+' of '+v.images.length+': '+esc(p[1])+'">'+img(p[0],p[1])+'<span>'+esc(p[1])+' ↗</span></button>').join('')+'</div><p class="source-caption">Image credit: '+esc(v.imageCredit)+' Additional photos saved locally for private planning; source pages are linked in the full-screen viewer.</p><div class="source-links"><a href="'+esc(v.site)+'" target="_blank" rel="noopener noreferrer">Visit the full official gallery ↗</a></div>';
 if(activeTab==='questions')html='<h3>Questions to ask before booking a tour</h3>'+list(v.questions,'questions')+'<div class="alert positive">Use “Draft enquiry” to email these questions for your September 2027 dates.</div>';
 $('#detail-tab-content').innerHTML=html}
 function openDetail(id,tab='overview'){
@@ -79,6 +79,17 @@ detailTab();$('#venue-dialog').showModal()}
 function saveField(el){let id=el.dataset.id,k=el.dataset.field;if(!id||!k)return;state.updates[id] ||= {};state.updates[id][k]=el.value;persist()}
 function closeDialog(id){let d=$(id);if(d?.open)d.close()}
 function toggleSave(id){let was=isSaved(id);state.favorites=was?state.favorites.filter(x=>x!==id):[...state.favorites,id];persist();renderGrid();renderShortlist();if($('#compare-view').classList.contains('active'))renderCompare();if($('#venue-dialog').open){let tab=activeTab;closeDialog('#venue-dialog');openDetail(id,tab)}notify(was?'Removed from saved venues':'Added to saved venues')}
+function renderPhoto(){
+let v=venue(photoVenue);if(!v)return;
+photoIndex=(photoIndex+v.images.length)%v.images.length;
+const p=v.images[photoIndex];
+$('#lightbox-img').src=p[0];$('#lightbox-img').alt=p[1];
+$('#lightbox-caption').textContent=v.name+' · '+p[1];
+$('#photo-counter').textContent=(photoIndex+1)+' / '+v.images.length;
+$('#photo-source').href=p[2]||v.site;
+$('#photo-source').setAttribute('aria-label','View original source page for '+p[1]);
+}
+function advancePhoto(delta){if($('#photo-dialog').open){photoIndex+=delta;renderPhoto()}}
 function renderShortlist(){
 let arr=venues.filter(v=>isSaved(v.id)).sort((a,b)=>a.rank-b.rank);
 $('#shortlist-cards').innerHTML=arr.length?arr.map(v=>{
@@ -149,7 +160,7 @@ if(act==='favorite'){e.stopPropagation();toggleSave(id)}
 if(act==='detail')openDetail(id);
 if(act==='mapfocus')focusMap(id);
 if(act==='email')draftEnquiry(venue(id));
-if(act==='photo'){let v=venue(id),p=v.images[+a.dataset.index];$('#lightbox-img').src=p[0];$('#lightbox-img').alt=p[1];$('#lightbox-caption').textContent=v.name+' · '+p[1]+' · '+v.imageCredit;$('#photo-dialog').showModal()}
+if(act==='photo'){photoVenue=id;photoIndex=+a.dataset.index;renderPhoto();$('#photo-dialog').showModal()}
 return}
 if(e.target.id==='detail-budget'){closeDialog('#venue-dialog');openBudget()}
 if(e.target.id==='save-notes'){if(activeVenue){$$('[data-field]',$('#venue-dialog')).forEach(saveField);renderGrid();notify('Notes saved on this device')}}});
@@ -163,6 +174,13 @@ document.addEventListener('error',e=>{if(e.target?.tagName==='IMG')e.target.pare
 $('#detail-close').onclick=()=>closeDialog('#venue-dialog');
 $('#budget-close').onclick=()=>closeDialog('#budget-dialog');
 $('#photo-close').onclick=()=>closeDialog('#photo-dialog');
+$('#photo-prev').onclick=()=>advancePhoto(-1);
+$('#photo-next').onclick=()=>advancePhoto(1);
+document.addEventListener('keydown',e=>{
+if(!$('#photo-dialog').open)return;
+if(e.key==='ArrowLeft'){e.preventDefault();advancePhoto(-1)}
+if(e.key==='ArrowRight'){e.preventDefault();advancePhoto(1)}
+});
 ['#venue-dialog','#budget-dialog','#photo-dialog'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()}));
 $('#budget-btn').onclick=openBudget;
 $('#questions-btn').onclick=()=>openDetail('bull','questions');

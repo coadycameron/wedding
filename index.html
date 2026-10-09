@@ -120,7 +120,16 @@
   </dialog>
   <dialog id="photo-dialog" class="photo-dialog" aria-label="Venue photograph">
     <button class="dialog-close light-close" id="photo-close" aria-label="Close image">×</button>
-    <img id="lightbox-img" alt="Venue photo enlarged"><div id="lightbox-caption"></div>
+    <div class="photo-stage">
+      <button class="photo-arrow" id="photo-prev" type="button" aria-label="Previous photo">‹</button>
+      <img id="lightbox-img" alt="Venue photo enlarged">
+      <button class="photo-arrow" id="photo-next" type="button" aria-label="Next photo">›</button>
+    </div>
+    <div class="photo-bottom">
+      <span id="photo-counter" class="photo-counter"></span>
+      <div id="lightbox-caption"></div>
+      <a id="photo-source" href="#" target="_blank" rel="noopener noreferrer">View photo source ↗</a>
+    </div>
   </dialog>
   <dialog id="budget-dialog" class="budget-dialog" aria-label="Budget estimate calculator">
     <button class="dialog-close" id="budget-close" aria-label="Close budget explorer">×</button>

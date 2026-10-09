@@ -13,7 +13,15 @@ window.VENUES = [
  images:[
  ["assets/gallery/wilsons-1.jpg","Private beachfront setting"],
  ["assets/gallery/wilsons-2.jpg","Coastal wedding grounds"],
- ["assets/gallery/wilsons-3.jpg","Beachfront wedding location"]
+ ["assets/gallery/wilsons-3.jpg","Beachfront wedding location"] ,["assets/gallery/wilsons-shoreline-wedding.jpg","Wedding on the rocky shoreline","https://wilsonscoastalclub.com/weddings"]
+ ,["assets/gallery/wilsons-aerial-waterfront.jpg","Aerial view of the cottages and beach","https://wilsonscoastalclub.com/"]
+ ,["assets/gallery/wilsons-cottages-exterior.jpg","Oceanview cottages and landscaped grounds","https://wilsonscoastalclub.com/cottages"]
+ ,["assets/gallery/wilsons-firepit-evening.jpg","Evening fire pit near the beach","https://wilsonscoastalclub.com/cottages"]
+ ,["assets/gallery/wilsons-cottage-water-view.jpg","View over the water from a cottage","https://wilsonscoastalclub.com/cottages"]
+ ,["assets/gallery/wilsons-beachfront-deck.jpg","Coastal deck with sunset views","https://wilsonscoastalclub.com/cottages"]
+ ,["assets/gallery/wilsons-cottage-loft-bedroom.jpg","Loft bedroom inside a waterfront cottage","https://wilsonscoastalclub.com/cottages"]
+ ,["assets/gallery/wilsons-cottages-shoreline.jpg","Shoreline cottages from the water","https://wilsonscoastalclub.com/cottages"]
+
  ],
  overview:"A collection of private seaside cottages with exclusive beach and breakwater access. Beautiful for a relaxed oceanside weekend, but you would create the reception setup with outside vendors rather than simply walk into a ballroom.",
  ceremony:"Beachfront or breakwater ceremony. Tides should be considered for scheduling.",
@@ -37,7 +45,16 @@ window.VENUES = [
  images:[
  ["assets/gallery/farm-1.jpg","South Cove property aerial"],
  ["assets/gallery/farm-2.jpg","Barn space"],
- ["assets/gallery/farm-3.jpg","Venue interior"]
+ ["assets/gallery/farm-3.jpg","Venue interior"] ,["assets/gallery/farm-barn-white-reception.jpg","Whitewashed barn with elegant table styling","https://www.farmatsouthcove.ca/barn"]
+ ,["assets/gallery/farm-reception-overview.jpg","Decorated wedding tables from above","https://www.farmatsouthcove.ca/barn"]
+ ,["assets/gallery/farm-barn-tables.jpg","Long reception table in the barn","https://www.farmatsouthcove.ca/barn"]
+ ,["assets/gallery/farm-outdoor-ceremony.jpg","Outdoor ceremony in the gardens","https://www.farmatsouthcove.ca/barn"]
+ ,["assets/gallery/farm-bonfire.jpg","Evening gathering by the bonfire","https://www.farmatsouthcove.ca/barn"]
+ ,["assets/gallery/farm-waterfront-sunset.jpg","Waterfront lofts at sunset","https://www.farmatsouthcove.ca/the-venue-package"]
+ ,["assets/gallery/farm-waterfront-lofts.jpg","Waterfront accommodation on the point","https://www.farmatsouthcove.ca/lofts-2"]
+ ,["assets/gallery/farm-loft-living-room.jpg","Bright loft living room facing the water","https://www.farmatsouthcove.ca/"]
+ ,["assets/gallery/farm-loft-waterfront-terrace.jpg","Terrace overlooking the cove","https://www.farmatsouthcove.ca/the-venue-package"]
+
  ],
  overview:"A very polished whitewashed barn on coastal Lunenburg grounds with a pond, fire pit, farmhouse, modern loft suites and bunkies. The design can look refined rather than traditionally rustic.",
  ceremony:"Outdoor grounds and waterfront available; exact ceremony fee and fallback not published.",
@@ -61,7 +78,15 @@ window.VENUES = [
  images:[
  ["assets/gallery/quarterdeck-1.jpg","Wedding by the coast"],
  ["assets/gallery/quarterdeck-2.jpg","Wedding reception atmosphere"],
- ["assets/gallery/quarterdeck-3.jpg","Wedding at Quarterdeck"]
+ ["assets/gallery/quarterdeck-3.jpg","Wedding at Quarterdeck"] ,["assets/gallery/quarterdeck-ocean-view-reception.jpg","Reception dining room with views of the beach","https://www.quarterdeck.ca/event-inquiry/wedding-events/"]
+ ,["assets/gallery/quarterdeck-ocean-view-dining.jpg","Ocean-facing dining tables","https://www.quarterdeck.ca/event-inquiry/wedding-events/"]
+ ,["assets/gallery/quarterdeck-bright-event-room.jpg","Bright white indoor wedding reception","https://www.quarterdeck.ca/event-inquiry/wedding-events/"]
+ ,["assets/gallery/quarterdeck-event-centre-setup.jpg","Formal dinner setting in the event centre","https://www.quarterdeck.ca/event-inquiry/wedding-events/"]
+ ,["assets/gallery/quarterdeck-loft-waterfront-living.jpg","Modern waterfront loft accommodation","https://www.quarterdeck.ca/"]
+ ,["assets/gallery/quarterdeck-oceanfront-suite.jpg","Suite lounge with views of the ocean","https://www.quarterdeck.ca/"]
+ ,["assets/gallery/quarterdeck-beachfront-accommodation.jpg","Oceanfront rows of resort accommodations","https://www.quarterdeck.ca/quarterdeck-story/"]
+ ,["assets/gallery/quarterdeck-venue-coast-windows.jpg","Windows overlooking the coastline","https://www.quarterdeck.ca/quarterdeck-story/"]
+
  ],
  overview:"A contemporary resort overlooking Summerville Beach, with a dedicated event centre, indoor dining, in-house culinary services and modern coastal accommodations. One of the least rustic options on the list.",
  ceremony:"Beachside ceremony setting; weather contingency to be confirmed.",
@@ -85,7 +110,16 @@ window.VENUES = [
  images:[
  ["assets/gallery/bull-1.jpg","Bull Point property"],
  ["assets/gallery/bull-2.jpg","Estate reception venue"],
- ["assets/gallery/bull-3.jpg","Wedding event"]
+ ["assets/gallery/bull-3.jpg","Wedding event"] ,["assets/gallery/bull-white-reception-hall.jpg","White reception hall with formal tables","https://www.bullpoint.ca/venue"]
+ ,["assets/gallery/bull-empty-event-space.jpg","Unfurnished bright wedding event space","https://www.bullpoint.ca/venue"]
+ ,["assets/gallery/bull-indoor-ceremony.jpg","Wedding ceremony hosted indoors","https://www.bullpoint.ca/venue"]
+ ,["assets/gallery/bull-reception-floorplan.jpg","Reception tables and the dance-floor layout","https://www.bullpoint.ca/venue"]
+ ,["assets/gallery/bull-coastal-estate-aerial.jpg","Aerial view across the waterfront estate","https://www.bullpoint.ca/the-ocean-house"]
+ ,["assets/gallery/bull-ocean-house-living.jpg","Ocean House living area","https://www.bullpoint.ca/the-ocean-house"]
+ ,["assets/gallery/bull-ocean-house-tub.jpg","Statement bathtub in the Ocean House","https://www.bullpoint.ca/the-ocean-house"]
+ ,["assets/gallery/bull-shoreline-ceremony.jpg","Outdoor oceanfront wedding ceremony","https://www.bullpoint.ca/the-ocean-house"]
+ ,["assets/gallery/bull-estate-sunset.jpg","Sunset ocean view from the estate","https://www.bullpoint.ca/the-ocean-house"]
+
  ],
  overview:"A 50-acre private estate with roughly 1,500 feet of shoreline, two accommodation buildings, and a purpose-built venue that feels more architectural than barn-like.",
  ceremony:"Waterfront estate setting; exact ceremony location, inclusions and weather backup require quote.",
@@ -109,7 +143,15 @@ window.VENUES = [
  images:[
  ["assets/gallery/pomquet-1.jpg","Harbourview Event Centre"],
  ["assets/gallery/pomquet-2.jpg","Event room"],
- ["assets/gallery/pomquet-3.jpg","Venue grounds"]
+ ["assets/gallery/pomquet-3.jpg","Venue grounds"] ,["assets/gallery/pomquet-event-centre-aerial.jpg","Aerial overview of the event centre","https://pomquetbeachcottages.com/harbourview-event-centre/"]
+ ,["assets/gallery/pomquet-event-centre-exterior.jpg","Exterior of the Harbourview Event Centre","https://pomquetbeachcottages.com/harbourview-event-centre/"]
+ ,["assets/gallery/pomquet-event-hall-table-layout.jpg","Wedding dinner tables in the hall","https://pomquetbeachcottages.com/harbourview-event-centre/"]
+ ,["assets/gallery/pomquet-decorated-reception-tables.jpg","Decorated long dining tables","https://pomquetbeachcottages.com/harbourview-event-centre/"]
+ ,["assets/gallery/pomquet-catering-kitchen.jpg","Catering kitchen for event service","https://pomquetbeachcottages.com/harbourview-event-centre/"]
+ ,["assets/gallery/pomquet-coastal-aerial.jpg","Aerial coastline and surrounding bays","https://pomquetbeachcottages.com/gallery/"]
+ ,["assets/gallery/pomquet-cottage-accommodations.jpg","The cottages and guest accommodation","https://pomquetbeachcottages.com/gallery/"]
+ ,["assets/gallery/pomquet-waterfront-inlet.jpg","Oceanfront dock and sheltered inlet","https://pomquetbeachcottages.com/gallery/"]
+
  ],
  overview:"An affordable purpose-built harbour-view hall on scenic grounds close to cottages. Less luxury boutique, but far simpler logistics and one of the clearest published rates.",
  ceremony:"Waterfront grounds and indoor rain option are advertised.",
@@ -133,7 +175,15 @@ window.VENUES = [
  images:[
  ["assets/gallery/anchorage-1.jpg","Wedding at Anchorage House"],
  ["assets/gallery/anchorage-2.jpg","Outdoor celebration"],
- ["assets/gallery/anchorage-3.jpg","Garden wedding"]
+ ["assets/gallery/anchorage-3.jpg","Garden wedding"] ,["assets/gallery/anchorage-inn-front-lawn.jpg","Victorian waterfront inn and lawns","https://www.anchoragehouse.com/nova-scotia-inn-cottages/weddings-events/weddings/"]
+ ,["assets/gallery/anchorage-reception-tent-exterior.jpg","Reception tent overlooking Hubbards Cove","https://www.anchoragehouse.com/nova-scotia-inn-cottages/weddings-events/weddings/"]
+ ,["assets/gallery/anchorage-tent-interior.jpg","Reception tent decorations and lighting","https://www.anchoragehouse.com/nova-scotia-inn-cottages/weddings-events/weddings/"]
+ ,["assets/gallery/anchorage-garden-ceremony.jpg","Waterside garden wedding ceremony","https://www.anchoragehouse.com/nova-scotia-inn-cottages/weddings-events/weddings/"]
+ ,["assets/gallery/anchorage-tent-dinner.jpg","Wedding dinner inside the tent","https://www.anchoragehouse.com/nova-scotia-inn-cottages/weddings-events/weddings/"]
+ ,["assets/gallery/anchorage-waterfront-dock.jpg","Waterfront dock and wedding party","https://www.anchoragehouse.com/nova-scotia-inn-cottages/weddings-events/weddings/"]
+ ,["assets/gallery/anchorage-cottages-exterior.jpg","One of the on-site cottages","https://www.anchoragehouse.com/nova-scotia-inn-cottages/accommodations/cottages/"]
+ ,["assets/gallery/anchorage-cottage-accommodation.jpg","Cottage accommodation on the grounds","https://www.anchoragehouse.com/nova-scotia-inn-cottages/accommodations/cottages/"]
+
  ],
  overview:"A Victorian waterfront house and cottage collection overlooking Hubbards Cove. The standard package includes a reception tent, full tableware, dance floor and event support, which reduces surprise rental expenses.",
  ceremony:"Front lawn by the water, with a wedding arch and 80 ceremony chairs included.",
@@ -157,7 +207,16 @@ window.VENUES = [
  images:[
  ["assets/oceanbay-hero.jpg","Oceanfront guesthouse and grounds"],
  ["assets/gallery/oceanbay-1.jpg","Glass sunroom and bright interiors"],
- ["assets/gallery/oceanbay-2.jpg","Water-view hot tub and outdoor grounds"]
+ ["assets/gallery/oceanbay-2.jpg","Water-view hot tub and outdoor grounds"] ,["assets/gallery/oceanbay-private-dock.jpg","Private waterside dock and seating","https://www.oceanbayview.ca/amenities"]
+ ,["assets/gallery/oceanbay-kayaks-waterfront.jpg","Waterfront kayaks and beach access","https://www.oceanbayview.ca/amenities"]
+ ,["assets/gallery/oceanbay-guest-suite.jpg","Modern luxury guest suite","https://www.oceanbayview.ca/amenities"]
+ ,["assets/gallery/oceanbay-shared-kitchen.jpg","Bright contemporary kitchen","https://www.oceanbayview.ca/amenities"]
+ ,["assets/gallery/oceanbay-large-dining-table.jpg","Dining area with large windows","https://www.oceanbayview.ca/amenities"]
+ ,["assets/gallery/oceanbay-indoor-dining-living.jpg","Spacious indoor gathering and dining area","https://www.oceanbayview.ca/amenities"]
+ ,["assets/gallery/oceanbay-property-aerial.jpg","Aerial view of the property and gardens","https://www.oceanbayview.ca/"]
+ ,["assets/gallery/oceanbay-ocean-view-hot-tub.jpg","Outdoor hot tub with ocean views","https://www.oceanbayview.ca/"]
+ ,["assets/gallery/oceanbay-coastal-walkway.jpg","Walkway along the sheltered shoreline","https://www.oceanbayview.ca/"]
+
  ],
  overview:"A luxury oceanfront guesthouse with manicured gardens, dock, five ensuite guest rooms and spa-like amenities. Strongest intimate private-house aesthetic, but not suitable for a normal 100-person wedding under the advertised contract.",
  ceremony:"Private garden and waterfront dock locations.",
@@ -181,7 +240,17 @@ window.VENUES = [
  images:[
  ["assets/oceanstone-ceremony.jpg","Oceanfront ceremony area"],
  ["assets/oceanstone-table.jpg","Wedding dining at Oceanstone"],
- ["assets/oceanstone-shore.jpg","Couple on the shoreline"]
+ ["assets/oceanstone-shore.jpg","Couple on the shoreline"] ,["assets/gallery/oceanstone-wedding-shore-sunset.jpg","Couple by the shoreline at sunset","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-couple-ocean-ceremony.jpg","Couple enjoying the ocean backdrop","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-wedding-party-shoreline.jpg","Wedding party on rocky coastline","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-reception-fireplace.jpg","Reception table by the stone fireplace","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-wedding-dessert.jpg","Wedding cake and dessert display","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-wedding-reception-tables.jpg","Reception tables set for dinner","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-resort-waterfront-terrace.jpg","Resort terrace overlooking the coastline","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-reception-toasts.jpg","Evening toast in the reception room","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-wedding-first-dance.jpg","First dance during the reception","https://oceanstoneresort.com/weddings/"]
+ ,["assets/gallery/oceanstone-wedding-evening-dance.jpg","Guests dancing in the reception","https://oceanstoneresort.com/weddings/"]
+
  ],
  overview:"A boutique resort with rocky Atlantic ceremony grounds, on-site food and bar services, cottages, lodge accommodation and an optional Nordic spa experience. Full-service and intimate, but comparatively expensive.",
  ceremony:"Waterfront ceremony arbour with indoor weather backup included in the 2027 guide.",

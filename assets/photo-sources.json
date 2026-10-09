@@ -1,0 +1,363 @@
+{
+  "wilsons": [
+    {
+      "local": "assets/gallery/wilsons-shoreline-wedding.jpg",
+      "caption": "Wedding on the rocky shoreline",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/758ee03e-d635-4773-93f4-b3038f546821/beachfront-cottage-resort-small-wedding-venue-near-halifax-nova-scotia.jpg"
+    },
+    {
+      "local": "assets/gallery/wilsons-aerial-waterfront.jpg",
+      "caption": "Aerial view of the cottages and beach",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/2c7d3758-560c-4884-80e5-5d71ca451924/2024-09-29-TNS-DeanCas-Wilsons-highresDJI_0436.jpg"
+    },
+    {
+      "local": "assets/gallery/wilsons-cottages-exterior.jpg",
+      "caption": "Oceanview cottages and landscaped grounds",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/8b39436b-32f4-4af9-9cb5-46c8250ab74b/oceanview_woodfired_hottub_saltwater_Airconditioning_fireplace+%284%29.jpg"
+    },
+    {
+      "local": "assets/gallery/wilsons-firepit-evening.jpg",
+      "caption": "Evening fire pit near the beach",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/2dd0239c-8450-4450-85e4-0cf29a2dcacc/Halifax_NovaScotia_CottageRentals_Courtyard_Woodfired_Hottub_Saltwater_Ocean+%283%29.jpg"
+    },
+    {
+      "local": "assets/gallery/wilsons-cottage-water-view.jpg",
+      "caption": "View over the water from a cottage",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/b33e8870-db42-475e-ad06-90c7b530cce1/cottage_rentals_NS_halifax_privatebeach_petfriendly_woodfired_hottubs_sauna_oceanfront+%285%29.jpg"
+    },
+    {
+      "local": "assets/gallery/wilsons-beachfront-deck.jpg",
+      "caption": "Coastal deck with sunset views",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/98fd7c0c-f9e9-417b-a0d1-bed1a3089c20/Cottage+Rentals_NovaScotia_Saltwater_Hottub_PrivateBeach_Halifax+%282%29.JPG"
+    },
+    {
+      "local": "assets/gallery/wilsons-cottage-loft-bedroom.jpg",
+      "caption": "Loft bedroom inside a waterfront cottage",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/dbe65c48-df6a-4cd6-a290-ca3b10fe6a06/kingbed_oceanviews_saltwater_woodfired_hottub_woodbeams_fireplace_loftbedroom_beach_petfriendly_Halifax_pets+%281%29.jpg"
+    },
+    {
+      "local": "assets/gallery/wilsons-cottages-shoreline.jpg",
+      "caption": "Shoreline cottages from the water",
+      "source": "https://images.squarespace-cdn.com/content/v1/64a6bc7618275c16431547fe/1ce2d1ec-0339-47e1-baa4-3cef5bc09b00/halifax_oceanfront_privatebeach_sand_petfriendly_hottubs_saltwater_woodfired_fireplace+%2810%29.jpg"
+    }
+  ],
+  "farm": [
+    {
+      "local": "assets/gallery/farm-barn-white-reception.jpg",
+      "caption": "Whitewashed barn with elegant table styling",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/2871df2d-e661-442c-b325-54b485e57b44/Twigandtwinefloristry_Halifax_wedding_flowers_Halifax_Florist_83.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-reception-overview.jpg",
+      "caption": "Decorated wedding tables from above",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1719241487501-PV77883T6SOYMU70KBDP/Terri-Lynn+Warren+Photography+-+Halifax+Engagement+Wedding+Photographer+The+Farm+At+South+Cove-9752.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-barn-tables.jpg",
+      "caption": "Long reception table in the barn",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1719241494382-NKPW3NORLF4KV42CZKBK/Terri-Lynn-Warren-Photography-Halifax-Wedding-Photographer-The-Farm-at-South-Cove-Lunenburg-2621.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-outdoor-ceremony.jpg",
+      "caption": "Outdoor ceremony in the gardens",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1719241331472-P903HRUK4KZXB7UUXHCB/_O1A6957.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-bonfire.jpg",
+      "caption": "Evening gathering by the bonfire",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1547493512310-7KGUVPRS4XM6U51SPI1E/DSC_3989-2.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-waterfront-sunset.jpg",
+      "caption": "Waterfront lofts at sunset",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1611841615993-4SHZOP8IT7V6ZYWK5T2Q/DJI_0111-Pano.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-waterfront-lofts.jpg",
+      "caption": "Waterfront accommodation on the point",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1611939308107-W17UCWKCBIWM34RDWZ6H/DJI_0138-Pano-2.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-loft-living-room.jpg",
+      "caption": "Bright loft living room facing the water",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1611840762241-L91K9TBCQO3W7DDAVSIW/IMG_3866.jpg"
+    },
+    {
+      "local": "assets/gallery/farm-loft-waterfront-terrace.jpg",
+      "caption": "Terrace overlooking the cove",
+      "source": "https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1611841316863-SFTKSTUEY9NTEUV5QB71/IMG_3869.jpg"
+    }
+  ],
+  "quarterdeck": [
+    {
+      "local": "assets/gallery/quarterdeck-ocean-view-reception.jpg",
+      "caption": "Reception dining room with views of the beach",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2025/03/QD-Wedding6.jpg"
+    },
+    {
+      "local": "assets/gallery/quarterdeck-ocean-view-dining.jpg",
+      "caption": "Ocean-facing dining tables",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2025/03/QD-Wedding7.jpg"
+    },
+    {
+      "local": "assets/gallery/quarterdeck-bright-event-room.jpg",
+      "caption": "Bright white indoor wedding reception",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2025/03/One-Day-Affair.jpg"
+    },
+    {
+      "local": "assets/gallery/quarterdeck-event-centre-setup.jpg",
+      "caption": "Formal dinner setting in the event centre",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2025/03/One-Day-Affair3.jpg"
+    },
+    {
+      "local": "assets/gallery/quarterdeck-loft-waterfront-living.jpg",
+      "caption": "Modern waterfront loft accommodation",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2024/06/deluxe-loft-1-bedroom-1.jpg-1-700x467.webp"
+    },
+    {
+      "local": "assets/gallery/quarterdeck-oceanfront-suite.jpg",
+      "caption": "Suite lounge with views of the ocean",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2024/06/3A5A9403-1-700x467.jpg"
+    },
+    {
+      "local": "assets/gallery/quarterdeck-beachfront-accommodation.jpg",
+      "caption": "Oceanfront rows of resort accommodations",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2024/06/banner3.webp"
+    },
+    {
+      "local": "assets/gallery/quarterdeck-venue-coast-windows.jpg",
+      "caption": "Windows overlooking the coastline",
+      "source": "https://www.quarterdeck.ca/wp-content/uploads/2024/05/the-grill-3.webp"
+    }
+  ],
+  "bull": [
+    {
+      "local": "assets/gallery/bull-white-reception-hall.jpg",
+      "caption": "White reception hall with formal tables",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1698872990829-1PO776TPX4GDUHBINN61/JacquelineAnnePhotography-HalifaxWeddingPhotographer-SampleCollection-JessicaandBrettPreviews-11.jpg"
+    },
+    {
+      "local": "assets/gallery/bull-empty-event-space.jpg",
+      "caption": "Unfurnished bright wedding event space",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1698872975743-VF86BC36UBU0EFDVCWPJ/Terri-Lynn+Warren+Photography+-+Halifax+Engagement+Wedding+Photographer+Bull+Point+Estate+South+Shore-6677.jpg"
+    },
+    {
+      "local": "assets/gallery/bull-indoor-ceremony.jpg",
+      "caption": "Wedding ceremony hosted indoors",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1699052327449-UOFZ978NR07BQ2RFTXH7/Keisha+%26+Cole_397.jpg"
+    },
+    {
+      "local": "assets/gallery/bull-reception-floorplan.jpg",
+      "caption": "Reception tables and the dance-floor layout",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1699052320936-34QPX6ON4JUT5FTGNZMM/L%2BH-married-129_websize.jpg"
+    },
+    {
+      "local": "assets/gallery/bull-coastal-estate-aerial.jpg",
+      "caption": "Aerial view across the waterfront estate",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1699050092232-QACC22D9FEW6737OVV4Z/image-asset.jpeg"
+    },
+    {
+      "local": "assets/gallery/bull-ocean-house-living.jpg",
+      "caption": "Ocean House living area",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1698966828449-385E7WB9KMALPXWDKVN6/DSC00257.jpg"
+    },
+    {
+      "local": "assets/gallery/bull-ocean-house-tub.jpg",
+      "caption": "Statement bathtub in the Ocean House",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1698966901894-WY2L1CMDF4VSZS6RSRAU/DSC00275.jpg"
+    },
+    {
+      "local": "assets/gallery/bull-shoreline-ceremony.jpg",
+      "caption": "Outdoor oceanfront wedding ceremony",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1699051778887-H77YS0V6FF85R9JT6FH3/L%2BH-23.jpg"
+    },
+    {
+      "local": "assets/gallery/bull-estate-sunset.jpg",
+      "caption": "Sunset ocean view from the estate",
+      "source": "https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1698929510884-O4TLQYKUX97Q6KBDCNU3/2023-06-01-06-10-37-557.jpg"
+    }
+  ],
+  "anchorage": [
+    {
+      "local": "assets/gallery/anchorage-inn-front-lawn.jpg",
+      "caption": "Victorian waterfront inn and lawns",
+      "source": "https://www.anchoragehouse.com/images/banners/homebanner.jpg"
+    },
+    {
+      "local": "assets/gallery/anchorage-reception-tent-exterior.jpg",
+      "caption": "Reception tent overlooking Hubbards Cove",
+      "source": "https://www.anchoragehouse.com/images/photos/weddings6.jpg"
+    },
+    {
+      "local": "assets/gallery/anchorage-tent-interior.jpg",
+      "caption": "Reception tent decorations and lighting",
+      "source": "https://www.anchoragehouse.com/images/photos/weddings7.jpg"
+    },
+    {
+      "local": "assets/gallery/anchorage-garden-ceremony.jpg",
+      "caption": "Waterside garden wedding ceremony",
+      "source": "https://www.anchoragehouse.com/images/photos/weddings2.jpg"
+    },
+    {
+      "local": "assets/gallery/anchorage-tent-dinner.jpg",
+      "caption": "Wedding dinner inside the tent",
+      "source": "https://www.anchoragehouse.com/images/photos/weddings3.jpg"
+    },
+    {
+      "local": "assets/gallery/anchorage-waterfront-dock.jpg",
+      "caption": "Waterfront dock and wedding party",
+      "source": "https://www.anchoragehouse.com/images/photos/weddings4.jpg"
+    },
+    {
+      "local": "assets/gallery/anchorage-cottages-exterior.jpg",
+      "caption": "One of the on-site cottages",
+      "source": "https://www.anchoragehouse.com/images/photos/aspotogancottage1.jpg"
+    },
+    {
+      "local": "assets/gallery/anchorage-cottage-accommodation.jpg",
+      "caption": "Cottage accommodation on the grounds",
+      "source": "https://www.anchoragehouse.com/images/photos/bayswatercottage1.jpg"
+    }
+  ],
+  "oceanbay": [
+    {
+      "local": "assets/gallery/oceanbay-private-dock.jpg",
+      "caption": "Private waterside dock and seating",
+      "source": "https://static.wixstatic.com/media/ef402a_a5bd68df490e4f5f9659c9466ac8ccce~mv2.jpg/v1/crop/x_0,y_68,w_749,h_421/fill/w_576,h_324,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/saildock5.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-kayaks-waterfront.jpg",
+      "caption": "Waterfront kayaks and beach access",
+      "source": "https://static.wixstatic.com/media/ef402a_7bc6cdf761a5449f86b1ef17fbb30932~mv2.jpg/v1/crop/x_54,y_15,w_371,h_433/fill/w_282,h_337,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/kayak.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-guest-suite.jpg",
+      "caption": "Modern luxury guest suite",
+      "source": "https://static.wixstatic.com/media/b51f67_d254ea4af40e459ab81167fb8c17e441~mv2.jpg/v1/crop/x_0,y_211,w_1620,h_869/fill/w_576,h_309,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/_P8A4766-Edit.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-shared-kitchen.jpg",
+      "caption": "Bright contemporary kitchen",
+      "source": "https://static.wixstatic.com/media/b51f67_af830c69bebd47db94ffbac164c1b199~mv2.jpg/v1/crop/x_176,y_270,w_1405,h_736/fill/w_576,h_302,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b51f67_af830c69bebd47db94ffbac164c1b199~mv2.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-large-dining-table.jpg",
+      "caption": "Dining area with large windows",
+      "source": "https://static.wixstatic.com/media/b51f67_48e273e82d904bb39b2c936e07d528c2~mv2.jpg/v1/crop/x_383,y_176,w_857,h_904/fill/w_282,h_297,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b51f67_48e273e82d904bb39b2c936e07d528c2~mv2.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-indoor-dining-living.jpg",
+      "caption": "Spacious indoor gathering and dining area",
+      "source": "https://static.wixstatic.com/media/b1edcc_5ad0829cb5384045a4030a8d8fa546d3~mv2.jpg/v1/crop/x_193,y_0,w_639,h_678/fill/w_294,h_312,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/OBV%20dining.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-property-aerial.jpg",
+      "caption": "Aerial view of the property and gardens",
+      "source": "https://static.wixstatic.com/media/ef402a_44f96fe12cd043df8074d3ff7d2d5e54~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ef402a_44f96fe12cd043df8074d3ff7d2d5e54~mv2.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-ocean-view-hot-tub.jpg",
+      "caption": "Outdoor hot tub with ocean views",
+      "source": "https://static.wixstatic.com/media/ef402a_06239e347fa94815b54aeeba2a48c225~mv2.jpg/v1/fill/w_147,h_83,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ef402a_06239e347fa94815b54aeeba2a48c225~mv2.jpg"
+    },
+    {
+      "local": "assets/gallery/oceanbay-coastal-walkway.jpg",
+      "caption": "Walkway along the sheltered shoreline",
+      "source": "https://static.wixstatic.com/media/ef402a_255ab6254eda4939be14ada08795d1da~mv2.jpg/v1/fill/w_147,h_83,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ef402a_255ab6254eda4939be14ada08795d1da~mv2.jpg"
+    }
+  ],
+  "oceanstone": [
+    {
+      "local": "assets/gallery/oceanstone-wedding-shore-sunset.jpg",
+      "caption": "Couple by the shoreline at sunset",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/Wedding-Images-6.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-couple-ocean-ceremony.jpg",
+      "caption": "Couple enjoying the ocean backdrop",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/Wedding-Images-8.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-wedding-party-shoreline.jpg",
+      "caption": "Wedding party on rocky coastline",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/Wedding-Images-2.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-reception-fireplace.jpg",
+      "caption": "Reception table by the stone fireplace",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/2.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-wedding-dessert.jpg",
+      "caption": "Wedding cake and dessert display",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/3.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-wedding-reception-tables.jpg",
+      "caption": "Reception tables set for dinner",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/4.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-resort-waterfront-terrace.jpg",
+      "caption": "Resort terrace overlooking the coastline",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/Wedding-Images-3.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-reception-toasts.jpg",
+      "caption": "Evening toast in the reception room",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/1-1.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-wedding-first-dance.jpg",
+      "caption": "First dance during the reception",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/2-1.svg"
+    },
+    {
+      "local": "assets/gallery/oceanstone-wedding-evening-dance.jpg",
+      "caption": "Guests dancing in the reception",
+      "source": "https://oceanstoneresort.com/wp-content/uploads/2026/06/3-1.svg"
+    }
+  ],
+  "pomquet": [
+    {
+      "local": "assets/gallery/pomquet-event-centre-aerial.jpg",
+      "caption": "Aerial overview of the event centre",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/10/pbc_hec-gallery-64.jpg"
+    },
+    {
+      "local": "assets/gallery/pomquet-event-centre-exterior.jpg",
+      "caption": "Exterior of the Harbourview Event Centre",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/10/pbc_harbourview2024-exterior01.jpg"
+    },
+    {
+      "local": "assets/gallery/pomquet-event-hall-table-layout.jpg",
+      "caption": "Wedding dinner tables in the hall",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/10/Pomquet-Beach-Cottages-Harbourview-10.jpg"
+    },
+    {
+      "local": "assets/gallery/pomquet-decorated-reception-tables.jpg",
+      "caption": "Decorated long dining tables",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/10/Pomquet-Beach-Cottages-Harbourview-5.jpg"
+    },
+    {
+      "local": "assets/gallery/pomquet-catering-kitchen.jpg",
+      "caption": "Catering kitchen for event service",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/11/Harbourview-Centre-Kitchen-Bar-Area-2.jpg"
+    },
+    {
+      "local": "assets/gallery/pomquet-coastal-aerial.jpg",
+      "caption": "Aerial coastline and surrounding bays",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/10/pbc_gallery-gallery-11.jpg"
+    },
+    {
+      "local": "assets/gallery/pomquet-cottage-accommodations.jpg",
+      "caption": "The cottages and guest accommodation",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/10/pbc_activities-banner-71.jpg"
+    },
+    {
+      "local": "assets/gallery/pomquet-waterfront-inlet.jpg",
+      "caption": "Oceanfront dock and sheltered inlet",
+      "source": "https://pomquetbeachcottages.com/wp-content/uploads/2024/10/pbc_gallery-banner-61.jpg"
+    }
+  ]
+}
