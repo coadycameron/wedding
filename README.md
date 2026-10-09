@@ -2,6 +2,16 @@
 
 An interactive, responsive wedding venue planning website for twelve shortlisted locations across Nova Scotia. Target wedding period: **September 2027**, around **75–125 guests**.
 
+## GitHub Pages
+
+The public site is intended to be available at **https://coadycameron.github.io/wedding/**.
+
+This repository contains a plain static site in its root and a `.nojekyll` marker to disable Jekyll processing. No build step, package install, or custom GitHub Actions workflow is necessary.
+
+To enable GitHub Pages: open **[Repository Settings → Pages](https://github.com/coadycameron/wedding/settings/pages)** and set **Build and deployment → Source** to **Deploy from a branch**, then select **`main` → `/(root)` → Save**. Subsequent commits to `main` publish automatically. GitHub may take several minutes to finish its first deployment.
+
+**Public publishing notice:** Venue and photographer imagery may be copyrighted by third parties. The images in this repository were collected for planning reference and should only be displayed publicly with appropriate permissions. Personal shortlist and quote notes remain in the visitor's own browser local storage; they are not hosted in this repository.
+
 ## Preview locally
 
 From this repository, run:
@@ -31,7 +41,7 @@ Each profile includes capacities and caveats, reception and ceremony description
 
 ## Interactive features
 
-* Browse all eight venues with image-led cards, search, region filtering, a guest-count selector, sorting and a strict published-capacity filter.
+* Browse all twelve venues with image-led cards, search, region filtering, a guest-count selector, sorting and a strict published-capacity filter.
 * Open each venue for detailed information, photos and photo lightbox, included and excluded services, pricing context, questions to ask, links to official sources and Google Maps.
 * Compare venues in a horizontally scrollable table with saved-only and all-venue modes.
 * Browse all venue pins on an interactive OpenStreetMap map.
