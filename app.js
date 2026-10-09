@@ -198,6 +198,21 @@ if(act==='photo-step'){changeInlinePhoto(id,Number(a.dataset.delta))}
 return}
 if(e.target.id==='detail-budget'){closeDialog('#venue-dialog');openBudget()}
 if(e.target.id==='save-notes'){if(activeVenue){$$('[data-field]',$('#venue-dialog')).forEach(saveField);renderGrid();notify('Notes saved on this device')}}});
+// Touch users can swipe the featured photo while hover-only desktop arrows stay hidden.
+let imageSwipe=null;
+document.addEventListener('touchstart',e=>{
+ const area=e.target.closest('.photo-browser');
+ if(!area||e.touches.length!==1||e.target.closest('.heart,.inline-photo-link'))return;
+ imageSwipe={id:area.dataset.id,x:e.touches[0].clientX,y:e.touches[0].clientY};
+},{passive:true});
+document.addEventListener('touchend',e=>{
+ if(!imageSwipe||!e.changedTouches.length)return;
+ const dx=e.changedTouches[0].clientX-imageSwipe.x;
+ const dy=e.changedTouches[0].clientY-imageSwipe.y;
+ if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.2)changeInlinePhoto(imageSwipe.id,dx<0?1:-1);
+ imageSwipe=null;
+},{passive:true});
+document.addEventListener('touchcancel',()=>{imageSwipe=null},{passive:true});
 document.addEventListener('change',e=>{
 if(e.target.dataset.field){saveField(e.target);return}
 if(e.target.id==='guest-select'){state.guestCount=+e.target.value;persist();renderGrid()}
