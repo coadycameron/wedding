@@ -17,8 +17,8 @@ function photoBrowser(v,context){
     '<button type="button" class="photo-canvas" data-action="photo" data-id="'+v.id+'" data-index="'+i+'" aria-label="Open '+esc(v.name)+' photos">'+img(p[0],p[1])+'</button>'+
     (isCard?'<div class="card-label">'+esc(v.style.toUpperCase())+'</div>':
       '<div class="detail-cover-text"><small>'+esc(v.region.toUpperCase())+' · '+esc(v.town.toUpperCase())+'</small><h2>'+esc(v.name)+'</h2></div>')+
-    '<button type="button" class="photo-inline-arrow photo-inline-prev" data-action="photo-step" data-id="'+v.id+'" data-delta="-1" aria-label="Previous photo of '+esc(v.name)+'">‹</button>'+
-    '<button type="button" class="photo-inline-arrow photo-inline-next" data-action="photo-step" data-id="'+v.id+'" data-delta="1" aria-label="Next photo of '+esc(v.name)+'">›</button>'+
+    '<button type="button" class="photo-inline-arrow photo-inline-prev" data-action="photo-step" data-id="'+v.id+'" data-delta="-1" aria-label="Previous photo of '+esc(v.name)+'">←</button>'+
+    '<button type="button" class="photo-inline-arrow photo-inline-next" data-action="photo-step" data-id="'+v.id+'" data-delta="1" aria-label="Next photo of '+esc(v.name)+'">→</button>'+
     '<button type="button" class="inline-photo-link" data-action="photo" data-id="'+v.id+'" data-index="'+i+'" aria-label="Open '+esc(v.name)+' photo gallery">View photos <span class="inline-photo-count">'+(i+1)+' / '+v.images.length+'</span> ↗</button>'+
     (isCard?'<button type="button" class="heart '+(isSaved(v.id)?'saved':'')+'" data-action="favorite" data-id="'+v.id+'" aria-label="'+(isSaved(v.id)?'Remove saved venue':'Save venue')+'">'+(isSaved(v.id)?'♥':'♡')+'</button>':'')+
     '</div>';

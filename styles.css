@@ -54,17 +54,17 @@ input,select,textarea{font-size:inherit}
 .photo-inline-arrow{
  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
  width:39px;height:48px;display:grid;place-items:center;
- background:#f5f9f4c0;color:#345646;border:0;box-shadow:none;
- font:34px/1 var(--serif);opacity:0;visibility:hidden;pointer-events:none;
- transition:opacity .18s ease,background .18s ease
+ background:transparent;color:#fff;border:0;box-shadow:none;text-shadow:0 1px 4px #0009;
+ font:29px/1 var(--sans);opacity:0;visibility:hidden;pointer-events:none;
+ transition:opacity .18s ease
 }
 .photo-inline-prev{left:9px}
 .photo-inline-next{right:9px}
 @media (hover:hover) and (pointer:fine){
- .photo-browser:hover .photo-inline-arrow{opacity:.55;visibility:visible;pointer-events:auto}
- .photo-browser:hover .photo-inline-arrow:hover{opacity:.85;background:#ffffffd9}
+ .photo-browser:hover .photo-inline-arrow{opacity:.65;visibility:visible;pointer-events:auto}
+ .photo-browser:hover .photo-inline-arrow:hover{opacity:1}
 }
-.photo-browser .photo-inline-arrow:focus-visible{opacity:.85;visibility:visible;pointer-events:auto;background:#ffffffd9}
+.photo-browser .photo-inline-arrow:focus-visible{opacity:1;visibility:visible;pointer-events:auto}
 .inline-photo-link{
  position:absolute;z-index:5;right:13px;bottom:12px;
  padding:9px 12px;border:0;border-radius:3px;
@@ -74,7 +74,7 @@ input,select,textarea{font-size:inherit}
 .inline-photo-count{font-variant-numeric:tabular-nums;font-size:.92em;color:#54705c;white-space:nowrap}
 .inline-photo-link:hover{background:white}
 .detail-cover .inline-photo-link{top:18px;left:19px;right:auto;bottom:auto;background:#fcfdf7f2}
-.detail-cover.photo-browser .photo-inline-arrow{width:47px;height:53px;font-size:37px}
+.detail-cover.photo-browser .photo-inline-arrow{width:47px;height:53px;font-size:33px}
 .detail-cover.photo-browser .photo-inline-prev{left:17px}
 .detail-cover.photo-browser .photo-inline-next{right:17px}
 .card-photo.photo-browser .heart{top:11px;right:11px}
@@ -84,8 +84,8 @@ input,select,textarea{font-size:inherit}
  .photo-browser .photo-inline-arrow{opacity:0;visibility:hidden;pointer-events:none}
 }
 @media(max-width:780px){
- .photo-inline-arrow{width:36px;height:45px;font-size:31px}
- .detail-cover.photo-browser .photo-inline-arrow{width:39px;height:46px;font-size:31px}
+ .photo-inline-arrow{width:36px;height:45px;font-size:27px}
+ .detail-cover.photo-browser .photo-inline-arrow{width:39px;height:46px;font-size:29px}
  .detail-cover .inline-photo-link{top:14px;left:14px}
 }
 @media(max-width:530px){
