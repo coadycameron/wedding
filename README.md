@@ -1,1 +1,70 @@
-# wedding
+# The Venue Journal
+
+An interactive, responsive wedding venue planning website for eight shortlisted locations across Nova Scotia. Target wedding period: **September 2027**, around **50–100 guests**.
+
+## Preview locally
+
+From this repository, run:
+
+```bash
+python3 -m http.server 8100
+```
+
+Then open [http://localhost:8100](http://localhost:8100) in your browser. There is no build step or npm dependency. Internet access is required for the OpenStreetMap tile layer, Google Fonts, Leaflet, and some additional official-website gallery images.
+
+## Venues
+
+1. Wilson's Coastal Club, Boutiliers Point
+2. The Farm at South Cove, Lunenburg
+3. Quarterdeck Resort, Summerville Centre
+4. Bull Point Estate, Port Mouton
+5. Pomquet Beach Cottages, Pomquet
+6. Anchorage House & Cottages, Hubbards
+7. Ocean Bay View Luxury Guesthouse, Musquodoboit Harbour
+8. Oceanstone Resort & Spa, Indian Harbour
+
+Each profile includes capacities and caveats, reception and ceremony descriptions, on-site accommodation, mandatory booking conditions, verified publicly advertised rate references where available, included and excluded items, known restrictions, enquiry questions, primary sources, and photos.
+
+## Interactive features
+
+* Browse all eight venues with image-led cards, search, region filtering, a guest-count selector, sorting and a strict published-capacity filter.
+* Open each venue for detailed information, photos and photo lightbox, included and excluded services, pricing context, questions to ask, links to official sources and Google Maps.
+* Compare venues in a horizontally scrollable table with saved-only and all-venue modes.
+* Browse all venue pins on an interactive OpenStreetMap map.
+* Save favourites and record enquiry statuses, your own venue-fee quotations, and personal notes.
+* Build rough budgets with editable guest count, per-person food and drinks, service gratuity, taxes and other on-site expenses.
+* Export a JSON backup of your favourites, notes, estimates and source references, or a CSV of the comparison.
+* Start an email enquiry for September 2027, with important venue-specific questions prefilled.
+
+**Important:** Favourites and notes are saved only to the current browser using `localStorage`. They do not sync across devices. Export periodically.
+
+## Research caveats
+
+This is a personal decision-support journal, not an official wedding booking service. Venue pricing, capacities, cutoffs, restrictions and availability must be confirmed directly for the specific September 2027 Saturday.
+
+Pricing types are deliberately kept separate:
+
+* **Published venue-space fee**: The Farm at South Cove advertises a $4,500 + HST venue-space package; this has **not** been verified as its September 2027 Saturday wedding package or full 2027 wedding rate. Advertised 2 PM–10 PM access requires clarification.
+* **Published wedding package**: Anchorage House's advertised $8,500 + HST package covers weddings up to 80 guests.
+* **Published venue/day rate**: Pomquet's Event Centre advertises $1,200/day; verify current fee and cleaning/add-ons.
+* **Tax-included package**: Ocean Bay View advertises $6,000 including a two-night whole-house stay, with a 50-person event limit and an additional refundable security deposit.
+* **Historical pricing only**: Oceanstone's 2025 weekend package specifies a $10,000 facility fee plus a $14,000 food-and-beverage minimum **before compulsory two-night accommodation bookings**. Its current 2027 guide lists facility inclusions and notes that resort exclusive use is conditional on reserving all 21 accommodation units, but does not publish the 2027 wedding fee. Do not treat the older minimum as a current quote.
+* **Quote required**: Wilson's Coastal Club, Quarterdeck and Bull Point.
+
+**The budget explorer is illustrative only.** It cannot price unknown mandatory cottage buyouts, may understate extra service and tent costs, and does not include the complete wedding. For a fair comparison, request an itemized proposal with taxes, gratuities, venue hours and any room guarantee in writing.
+
+## Sources and photo rights
+
+Each venue profile has links to the official venue websites, booking packages, and published policies that informed the research, reviewed October 8, 2026.
+
+Photographs are sourced from the venues' public websites. Optimized hero images are maintained in `assets/` solely as reference material for private wedding planning, and galleries credit the original property/photographers where possible. The venue owners and photographers retain their copyrights. **No rights to re-publish or commercialize these images are asserted. Do not publish this website publicly without checking image usage permissions or replacing the images with licensed materials.**
+
+## Repository structure
+
+* `index.html`: Application layout
+* `styles.css`: Responsive typography and visual design
+* `venues.js`: Curated research records, sources, coordinates and images
+* `app.js`: Client-side interactivity and browser-only persistence
+* `assets/`: Optimized venue images for robust preview
+
+There is no analytics, tracking, account login, server-side persistence or automatic booking.

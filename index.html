@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="A private, research-backed wedding venue journal comparing eight beautiful coastal venues across Nova Scotia for September 2027.">
+  <title>The Venue Journal | Nova Scotia Wedding, September 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhB1tzY7x2ZQ2uwr1SHMR0bGDVUMkv0O3GQ=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script defer src="venues.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner"><span>THE VENUE JOURNAL</span><span class="topbar-right">NOVA SCOTIA <span class="dot-sep">·</span> SEPTEMBER 2027</span></div>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <button type="button" class="brand" data-nav="discover" aria-label="Venue Journal home">
+        <span class="brand-graphic">V<span class="brand-small">J</span></span>
+        <span class="brand-text">the venue<br><strong>journal</strong></span>
+      </button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <button class="nav-link active" data-nav="discover">Explore venues</button>
+        <button class="nav-link" data-nav="compare">Compare</button>
+        <button class="nav-link" data-nav="map">Map</button>
+        <button class="nav-link" data-nav="shortlist">Saved <span id="saved-count" class="saved-count">0</span></button>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-subtle desktop-action" id="export-btn" type="button" title="Download your saved notes, statuses and venue data">Export notes <span aria-hidden="true">↗</span></button>
+        <button class="btn btn-ink" id="budget-btn" type="button">Budget explorer <span aria-hidden="true">↗</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> AN EXPLORATION IN COASTAL CELEBRATIONS</div>
+        <h1>Somewhere<br><em>worth gathering.</em></h1>
+        <p class="hero-subtitle">Eight beautiful places. One meaningful day. A carefully researched guide to oceanfront estates, elegant barns and coastal retreats across Nova Scotia.</p>
+        <div class="hero-metas">
+          <div><span class="meta-icon">◷</span><strong>September 2027</strong><small>Target celebration</small></div>
+          <div><span class="meta-icon">♧</span><strong>50–100 guests</strong><small>Flexible guest count</small></div>
+          <div><span class="meta-icon">≋</span><strong>Ocean & scenery</strong><small>Views come first</small></div>
+        </div>
+        <a class="hero-link" href="#explore" id="explore-link">Explore the venues <span>↗</span></a>
+      </div>
+      <div class="hero-gallery">
+        <div class="hero-photo hero-photo-main"><img src="https://images.squarespace-cdn.com/content/v1/633b24754ad2e2634faca4f7/1721063756635-F3C7FQM5ACJ5XAJVX8F0/DJI_0636.jpg" alt="Waterfront scenery at Bull Point Estate" fetchpriority="high"></div>
+        <div class="hero-photo hero-photo-top"><img src="https://images.squarespace-cdn.com/content/v1/5bc602ff049079548323b44d/1611841316863-SFTKSTUEY9NTEUV5QB71/IMG_3869.jpg" alt="Barn at the Farm at South Cove"></div>
+        <div class="hero-photo hero-photo-bottom"><img src="https://www.quarterdeck.ca/wp-content/uploads/2025/03/QD-Wedding5-1024x683.jpg" alt="Wedding at Quarterdeck Resort"></div>
+        <span class="hero-image-caption">INSPIRED BY THE COAST <span>↗</span></span>
+      </div>
+    </section>
+
+    <section class="curation-band">
+      <div class="wrap curation-content">
+        <span class="curation-star">✳</span>
+        <p>Not a wedding directory. <strong>A shortlist that tells you what the brochures don't.</strong></p>
+        <span class="curation-update">RESEARCHED OCT 8, 2026</span>
+      </div>
+    </section>
+
+    <section id="discover-view" class="view active wrap">
+      <div class="section-heading" id="explore">
+        <div><div class="eyebrow">YOUR CURATED COLLECTION</div><h2>The venues <span class="light-serif">/ 08</span></h2><p>Compare the beautiful parts, the logistics, and the fine print.</p></div>
+        <div class="count-tag"><span class="count-dot"></span><span id="result-count">8</span> VENUES</div>
+      </div>
+      <div class="filter-toolbar">
+        <label class="search-box" aria-label="Search venues"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input id="search" type="search" placeholder="Search a venue or location..." autocomplete="off"></label>
+        <div class="select-field"><label for="guest-select">GUESTS</label><select id="guest-select"><option value="50">50 guests</option><option value="75" selected>75 guests</option><option value="100">100 guests</option><option value="125">125 guests</option></select></div>
+        <div class="select-field"><label for="region-select">REGION</label><select id="region-select"><option value="">All regions</option><option>HRM & St. Margaret’s Bay</option><option>South Shore</option><option>Eastern Shore</option><option>Northumberland Shore</option></select></div>
+        <div class="select-field"><label for="sort-select">SORT</label><select id="sort-select"><option value="curated">Our picks</option><option value="capacity">Largest capacity</option><option value="price">Known rental price</option><option value="alpha">Venue name</option></select></div>
+      </div>
+      <div class="filter-subrow">
+        <label class="check-label"><input type="checkbox" id="fit-only"><span class="custom-check"></span> Only show venues that clearly fit guest count</label>
+        <p>Prices in CAD · Published ≠ confirmed 2027 quote</p>
+      </div>
+      <div id="venues-grid" class="venues-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="compare-view" class="view wrap">
+      <div class="section-heading"><div><div class="eyebrow">SIDE BY SIDE</div><h2>Compare the details<span class="light-serif">.</span></h2><p>Start with saved venues, or compare all eight. Scroll horizontally on mobile.</p></div></div>
+      <div class="compare-controls"><button class="btn btn-outline" id="compare-all">Compare all 8</button><button class="btn btn-outline" id="compare-saved">Only my saved venues</button><button class="btn btn-ink" id="compare-export">Export comparison ↗</button></div>
+      <div class="table-scroll"><table class="comparison-table" id="comparison-table"></table></div>
+      <p class="fine-print">Published figures are not venue quotes. Capacity and buyout conditions must be reconfirmed for September 2027.</p>
+    </section>
+
+    <section id="map-view" class="view wrap">
+      <div class="section-heading"><div><div class="eyebrow">THE COASTLINE</div><h2>Find your setting<span class="light-serif">.</span></h2><p>Eight locations from St. Margaret’s Bay to the Northumberland Shore.</p></div></div>
+      <div class="map-layout"><div class="map-panel" id="venue-map" role="application" aria-label="Map of the eight wedding venues"><div class="map-fallback">Map requires an internet connection. Use the links beside the map to open each venue in Google Maps.</div></div><div id="map-list" class="map-list"></div></div>
+    </section>
+
+    <section id="shortlist-view" class="view wrap">
+      <div class="section-heading"><div><div class="eyebrow">YOUR FAVOURITES</div><h2>The shortlist<span class="light-serif">.</span></h2><p>Save your favourites, record quotes and keep everything you learn together on this device.</p></div></div>
+      <div id="shortlist-cards" class="shortlist-cards"></div>
+      <div class="privacy-note">✳ Notes, shortlists and quote values are saved in this browser only. They do not sync between devices. Use “Export notes” to back up your work.</div>
+    </section>
+
+    <section class="closing wrap">
+      <div class="closing-inner">
+        <span class="eyebrow">THE BIGGEST LESSON</span>
+        <h2>The view matters.<br><em>So does the fine print.</em></h2>
+        <p>Before booking a tour, ask for a 100-person seated floor plan, September 2027 pricing, the music cutoff, a genuine rain plan and any required room buyouts.</p>
+        <button class="btn btn-white" id="questions-btn">See questions for every venue ↗</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer wrap"><div><strong>the venue journal</strong><span>Nova Scotia · September 2027</span></div><p>Private planning research. Photos credited to the venues and original photographers. Not affiliated with the properties. Prices and policies can change.</p><a href="#hero">BACK TO TOP ↑</a></footer>
+
+  <dialog id="venue-dialog" class="detail-dialog" aria-label="Venue details">
+    <button class="dialog-close" id="detail-close" aria-label="Close venue details">×</button>
+    <div id="detail-content"></div>
+  </dialog>
+  <dialog id="photo-dialog" class="photo-dialog" aria-label="Venue photograph">
+    <button class="dialog-close light-close" id="photo-close" aria-label="Close image">×</button>
+    <img id="lightbox-img" alt="Venue photo enlarged"><div id="lightbox-caption"></div>
+  </dialog>
+  <dialog id="budget-dialog" class="budget-dialog" aria-label="Budget estimate calculator">
+    <button class="dialog-close" id="budget-close" aria-label="Close budget explorer">×</button>
+    <div class="budget-inner">
+      <div class="eyebrow">COST PLANNING</div><h2>Build a realistic<br><em>venue budget.</em></h2>
+      <p class="budget-intro">This estimates venue, dinner, drinks and on-site extras only. It excludes photography, attire and other full-wedding expenses. Where fees are unknown, enter a quote to compare.</p>
+      <div class="budget-config">
+        <label>Guests <input id="budget-guests" type="number" min="1" max="250" value="100"></label>
+        <label>Food per person <div class="dollar-field"><span>$</span><input id="budget-food" type="number" min="0" value="85"></div></label>
+        <label>Drinks per person <div class="dollar-field"><span>$</span><input id="budget-drink" type="number" min="0" value="35"></div></label>
+        <label>Other on-site expenses <div class="dollar-field"><span>$</span><input id="budget-extra" type="number" min="0" value="2000"></div></label>
+        <label>Estimated service gratuity (%) <input id="budget-service" type="number" min="0" max="40" value="15"></label>
+        <label>HST (%) <input id="budget-tax" type="number" min="0" max="30" value="14"></label>
+      </div>
+      <p class="calc-explain">Food, bar, gratuity and miscellaneous expenses are editable planning assumptions. Taxes are estimated, with special handling for Ocean Bay View's tax-included package. Mandatory room buyouts remain excluded unless already included in a published package.</p>
+      <div id="budget-results" class="budget-results"></div>
+    </div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
