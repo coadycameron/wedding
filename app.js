@@ -1,12 +1,12 @@
 (() => {
 'use strict';
-const venues=window.VENUES||[], $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
+const venues=window.VENUES||[], photographers=window.PHOTOGRAPHERS||[], $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
 let saved={};try{saved=JSON.parse(localStorage.getItem('venueJournalV1')||'{}')||{}}catch(e){}
 const state=Object.assign({favorites:[],updates:{},guestCount:75,budget:{guests:100,food:85,drink:35,extra:2000,service:15,tax:14}},saved);
 const money=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(n);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const persist=()=>{try{localStorage.setItem('venueJournalV1',JSON.stringify(state))}catch(e){notify('Storage full. Export your notes.')}};
-const update=id=>state.updates[id]||{},venue=id=>venues.find(v=>v.id===id),isSaved=id=>state.favorites.includes(id);
+const update=id=>state.updates[id]||{},venue=id=>venues.find(v=>v.id===id)||photographers.find(v=>v.id===id),isSaved=id=>state.favorites.includes(id);
 const img=(url,alt,attrs='')=>'<img src="'+esc(url)+'" alt="'+esc(alt)+'" loading="eager" decoding="async" '+attrs+'>';
 let activeVenue=null,activeTab='overview',map=null,markers={},compareMode='saved',toastTimer,photoVenue=null,photoIndex=0;
 const photoPositions={};
@@ -37,20 +37,24 @@ function changeInlinePhoto(id,delta){
 }
 
 function notify(message){let t=$('#toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3000)}
-function fit(v,n){if(v.id==='wilsons'&&n>65&&n<=107)return 'conditional';if(v.id==='oceanstone'&&n>80&&n<=125)return 'conditional';return n>v.capacity?'no':'good'}
-function fitText(v,n){let x=fit(v,n);return x==='no'?'Exceeds published capacity':x==='conditional'?(v.id==='wilsons'?'Requires overnight occupancy':'Seated capacity unconfirmed'):'Fits published capacity'}
+function fit(v,n){if(v.id==='wilsons'&&n>65&&n<=107)return 'conditional';if(v.id==='oceanstone'&&n>80&&n<=125)return 'conditional';if(v.id==='cable')return 'conditional';return n>v.capacity?'no':'good'}
+function fitText(v,n){let x=fit(v,n);return x==='no'?'Exceeds published capacity':x==='conditional'?(v.id==='wilsons'?'Requires overnight occupancy':v.id==='cable'?'Wedding dinner layout unconfirmed':'Seated capacity unconfirmed'):'Fits published capacity'}
 function amount(v){
 let q=Number(update(v.id).quote);if(q>0)return money(q)+' quoted';
 if(v.priceType==='unknown')return 'Request quote';
 if(v.priceType==='historical')return '$24,000 minimum*';
 return money(v.base)+(v.priceType==='venue-space'?'*':v.priceType==='tax-included'?' incl. tax':' + HST')}
 function amountNote(v){if(Number(update(v.id).quote)>0)return 'Your entered venue fee';
+if(v.id==='whitepoint')return 'Outdoor ceremony alone: $6,500 extra';
+if(v.id==='saraguay')return 'Venue only; ceremony is $650 extra';
+if(v.id==='lightfoot')return '2027 hospitality fee; catering and drinks extra';
+if(v.id==='cable')return '2027 buyout and dining price unknown';
 return {unknown:'2027 wedding fee unknown',historical:'Historical 2025 weekend minimum', 'venue-space':'Event-space rate, wedding unconfirmed',published:'Advertised venue rental', 'tax-included':'Package with two-night stay'}[v.priceType]}
 function card(v){
 let f=fit(v,state.guestCount);
 return '<article class="venue-card" data-id="'+v.id+'">'+photoBrowser(v,'card')+
 '<div class="card-body"><div class="card-region">'+esc(v.region.toUpperCase())+' · '+esc(v.town.toUpperCase())+'</div><h3 class="card-name">'+esc(v.name)+'</h3><p class="card-text">'+esc(v.score)+'</p>'+
-'<div class="card-facts"><span class="fact">♧ Up to '+v.capacity+'*</span><span class="fact">⌂ '+(v.beds?v.beds+' stay':'On-site stays')+'</span></div>'+
+'<div class="card-facts"><span class="fact">♧ Up to '+v.capacity+'*</span><span class="fact">⌂ '+(v.beds?v.beds+' stay':esc(v.stayFlag))+'</span></div>'+
 '<div class="card-price"><div><small>STARTING FIGURE</small><strong>'+esc(amount(v))+'</strong><span>'+esc(amountNote(v))+'</span></div><button class="card-open" data-action="detail" data-id="'+v.id+'" aria-label="View venue">↗</button></div></div>'+
 '<div class="card-footer"><span class="fit-pill '+f+'"><span class="fit-dot"></span>'+esc(fitText(v,state.guestCount))+'</span><button data-action="detail" data-id="'+v.id+'">View details</button></div></article>'}
 function filtered(){
@@ -69,7 +73,7 @@ function go(view){
 $$('.view').forEach(el=>el.classList.toggle('active',el.id===view+'-view'));
 $$('.nav-link').forEach(el=>el.classList.toggle('active',el.dataset.nav===view));
 $('#hero').style.display=view==='discover'?'grid':'none';$('.curation-band').style.display=view==='discover'?'block':'none';
-if(view==='shortlist')renderShortlist();if(view==='compare')renderCompare();if(view==='map')renderMap();
+if(view==='shortlist')renderShortlist();if(view==='compare')renderCompare();if(view==='map')renderMap();if(view==='photographers')renderPhotographers();
 scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',view==='discover'?location.pathname+location.search:'#'+view)}
 function list(items,type=''){return '<ul class="detail-list '+type+'">'+items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'}
 function detailTab(){
@@ -79,6 +83,7 @@ let html='';
 if(activeTab==='overview')html='<div class="detail-columns"><div><section class="detail-section"><h3>Setting & atmosphere</h3><p>'+esc(v.overview)+'</p></section><section class="detail-section"><h3>Ceremony</h3><p>'+esc(v.ceremony)+'</p></section><section class="detail-section"><h3>Reception</h3><p>'+esc(v.reception)+'</p></section></div><div><section class="detail-section"><h3>Overnight experience</h3><p>'+esc(v.stay)+'</p><div class="alert">'+esc(v.stayRule)+'</div></section><section class="detail-section"><h3>What makes us cautious</h3>'+list(v.risks,'risks')+'</section></div></div>';
 if(activeTab==='inclusions')html='<div class="detail-columns"><section class="detail-section"><h3>Included or advertised</h3>'+list(v.included)+'</section><section class="detail-section"><h3>Budget for separately</h3>'+list(v.extra,'risks')+'</section></div><div class="alert">Published offerings are not a September 2027 contract. Confirm every inclusion in writing.</div>';
 if(activeTab==='pricing')html='<div class="detail-columns"><div><h3>What is publicly priced</h3><p style="font-size:21px;font-weight:800;color:var(--ink)">'+esc(amount(v))+'</p><p>'+esc(v.baseLabel)+'</p><div class="alert">'+esc(v.priceType==='historical'?'The 2027 wedding guide does not publish prices. This is historical 2025 pricing, not a September 2027 quotation.':v.priceType==='venue-space'?'The $4,500 figure is a venue-space package, not confirmed as the 2027 wedding fee.':'Additional guest costs or overnight obligations may apply.')+'</div></div><div><h3>What remains unknown</h3>'+list(v.extra,'risks')+'<p>Enter the actual venue fee in Your planning notes below for better comparisons.</p></div></div><button class="btn btn-ink" id="detail-budget">Open budget explorer ↗</button>';
+if(activeTab==='pricing'&&v.packagePdf)html+='<div class="source-links"><a href="'+esc(v.packagePdf)+'" target="_blank" rel="noopener noreferrer">Official 2027 wedding package ↗</a><a href="assets/packages/lightfoot-wolfville-2027-official.pdf" target="_blank" rel="noopener noreferrer">Locally saved 2027 package PDF ↗</a></div><p>2027 à la carte example: $22 passed canapés, main courses from $35, standard bar $80/person or open bar $110/person. Automatic gratuity and 14% HST are additional.</p>';
 if(activeTab==='gallery')html='<div class="gallery-heading"><h3>'+v.images.length+' photos of '+esc(v.name)+'</h3><span>Open a photo to browse the album</span></div><div class="gallery-grid">'+v.images.map((p,i)=>'<button class="gallery-tile" data-action="photo" data-id="'+v.id+'" data-index="'+i+'" aria-label="View photo '+(i+1)+' of '+v.images.length+': '+esc(p[1])+'">'+img(p[0],p[1])+'<span>'+esc(p[1])+' ↗</span></button>').join('')+'</div><p class="source-caption">Image credit: '+esc(v.imageCredit)+' Additional photos saved locally for private planning; source pages are linked in the full-screen viewer.</p><div class="source-links"><a href="'+esc(v.site)+'" target="_blank" rel="noopener noreferrer">Visit the full official gallery ↗</a></div>';
 if(activeTab==='questions')html='<h3>Questions to ask before booking a tour</h3>'+list(v.questions,'questions')+'<div class="alert positive">Use “Draft enquiry” to email these questions for your September 2027 dates.</div>';
 $('#detail-tab-content').innerHTML=html}
@@ -90,7 +95,7 @@ $('#detail-content').innerHTML=photoBrowser(v,'detail')+
 '<p class="detail-intro">'+esc(v.score)+'</p><div class="detail-stat-grid">'+
 '<div class="detail-stat"><small>Published capacity</small><strong>'+v.capacity+' guests*</strong><span>Confirm seated layout</span></div>'+
 '<div class="detail-stat"><small>Public price</small><strong>'+esc(amount(v))+'</strong><span>'+esc(amountNote(v))+'</span></div>'+
-'<div class="detail-stat"><small>On-site stays</small><strong>'+(v.beds?v.beds+' people':'Available')+'</strong><span>See overnight rules</span></div>'+
+'<div class="detail-stat"><small>Accommodation</small><strong>'+(v.beds?v.beds+' people':esc(v.stayFlag))+'</strong><span>See overnight rules</span></div>'+
 '<div class="detail-stat"><small>Target date</small><strong>September 2027</strong><span>Availability unverified</span></div></div>'+
 '<nav class="detail-tabnav" aria-label="Venue sections"><button data-tab="overview">The venue</button><button data-tab="inclusions">What’s included</button><button data-tab="pricing">Pricing</button><button data-tab="gallery">Photos</button><button data-tab="questions">Questions to ask</button></nav>'+
 '<div class="detail-body" id="detail-tab-content"></div>'+
@@ -125,9 +130,30 @@ if($('#photo-dialog').open){
 }
 function renderShortlist(){
 let arr=venues.filter(v=>isSaved(v.id)).sort((a,b)=>a.rank-b.rank);
-$('#shortlist-cards').innerHTML=arr.length?arr.map(v=>{
+let photographerSaved=photographers.filter(v=>isSaved(v.id));
+$('#shortlist-cards').innerHTML=(arr.length||photographerSaved.length)?arr.map(v=>{
 let u=update(v.id);return '<article class="shortlist-item">'+img(v.hero,v.name)+'<div><h3>'+esc(v.name)+'</h3><p>'+esc(v.town)+' · '+esc(u.status||'Not contacted')+' · '+(u.quote?money(+u.quote)+' quoted':'No quote entered')+'</p><p>'+esc((u.notes||'').slice(0,140)||v.score)+'</p><button class="btn btn-outline" data-action="detail" data-id="'+v.id+'">Open details ↗</button> <button class="btn btn-subtle" data-action="favorite" data-id="'+v.id+'">Remove</button></div></article>'
-}).join(''):'<div class="shortlist-empty"><h3>No venues saved yet.</h3><p>Tap a ♡ on any venue. Saved notes and real quotes will appear here.</p><button class="btn btn-ink" data-nav="discover">Explore venues ↗</button></div>'}
+}).join('')+photographerSaved.map(v=>'<article class="shortlist-item">'+img(v.hero,v.name)+'<div><h3>'+esc(v.name)+'</h3><p>Wedding photographer · '+esc(update(v.id).status||'Not contacted')+'</p><p>'+esc((update(v.id).notes||v.style).slice(0,145))+'</p><button class="btn btn-outline" data-nav="photographers">View photographer ↗</button> <button class="btn btn-subtle" data-action="photographer-favorite" data-id="'+v.id+'">Remove</button></div></article>').join(''):'<div class="shortlist-empty"><h3>Nothing saved yet.</h3><p>Tap a ♡ on any venue. Saved notes and real quotes will appear here.</p><button class="btn btn-ink" data-nav="discover">Explore venues ↗</button></div>'}
+function renderPhotographers(){
+ const host=$('#photographers-content');if(!host)return;
+ host.innerHTML=photographers.map(v=>{
+ const u=update(v.id);
+ return '<article class="photographer-profile">'+
+ '<div class="photographer-photo">'+img(v.hero,v.name+' portfolio photograph')+'<button class="btn btn-outline photographer-photo-open" data-action="photo" data-id="'+v.id+'" data-index="0">View photograph ↗</button></div>'+
+ '<div class="photographer-main"><div class="eyebrow">DOCUMENTARY WEDDING PHOTOGRAPHY</div><h3>'+esc(v.name)+'</h3><p class="photographer-style">'+esc(v.style)+'</p><p>'+esc(v.overview)+'</p>'+
+ '<div class="photographer-links"><a class="btn btn-ink" target="_blank" rel="noopener noreferrer" href="'+esc(v.portfolio)+'">View full portfolio ↗</a><a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="'+esc(v.contact)+'">Enquire about September 2027 ↗</a>'+
+ '<button class="btn btn-outline" data-action="photographer-favorite" data-id="'+v.id+'">'+(isSaved(v.id)?'♥ Saved':'♡ Save photographer')+'</button></div></div></article>'+
+ '<div class="photographer-section"><div><div class="eyebrow">OFFICIAL PUBLISHED PRICING</div><h3>Coverage packages</h3><p>Published prices only. September 2027 availability and rates are not yet confirmed. All amounts CAD before HST.</p></div><a href="'+esc(v.prices)+'" target="_blank" rel="noopener noreferrer">Official price list ↗</a></div>'+
+ '<div class="photographer-packages">'+v.packages.map(pkg=>'<div class="photographer-package"><div class="eyebrow">'+pkg.hours+' HOURS OF COVERAGE</div><h4>'+esc(pkg.title)+'</h4><strong>'+money(pkg.price)+'</strong><p>'+esc(pkg.details)+'</p></div>').join('')+'</div>'+
+ '<div class="photographer-detail-grid"><section><h3>Optional upgrades</h3>'+list(v.upgrades)+'</section><section><h3>Questions to ask</h3>'+list(v.questions,'questions')+'</section></div>'+
+ '<div class="photographer-notes status-tools"><h3>Your photography notes</h3><label>CONTACT STATUS<select data-field="status" data-id="'+v.id+'"><option value="">Not contacted</option><option>Interested</option><option>Enquiry sent</option><option>Consultation scheduled</option><option>Quoted</option><option>Booked</option><option>Unavailable</option><option>Ruled out</option></select></label>'+
+ '<label>ACTUAL QUOTE (CAD)<input type="number" min="0" data-field="quote" data-id="'+v.id+'" value="'+esc(u.quote||'')+'" placeholder="Enter quote from photographer"></label>'+
+ '<label class="notes-label">YOUR NOTES<textarea data-field="notes" data-id="'+v.id+'" placeholder="Availability, consultation, delivery times, travel costs...">'+esc(u.notes||'')+'</textarea></label>'+
+ '<button class="btn btn-ink" data-action="photographer-save" data-id="'+v.id+'">Save photography notes</button></div>'+
+ '<p class="source-caption">Photo © '+esc(v.name)+'. <a href="'+esc(v.website)+'" target="_blank" rel="noopener noreferrer">Official website ↗</a> · <a href="'+esc(v.prices)+'" target="_blank" rel="noopener noreferrer">Pricing source ↗</a></p>';
+ }).join('');
+ photographers.forEach(v=>{let el=$('[data-field="status"][data-id="'+v.id+'"]',host);if(el)el.value=update(v.id).status||''});
+}
 function compareVenues(){let arr=compareMode==='saved'?venues.filter(v=>isSaved(v.id)):venues;if(!arr.length)arr=venues;return [...arr].sort((a,b)=>a.rank-b.rank)}
 function renderCompare(){
 let arr=compareVenues();
@@ -164,7 +190,7 @@ function estimate(v,b){
 let quote=+update(v.id).quote||0,fee=quote||v.base;if(fee==null)return null;
 let fb=Math.max(b.guests*(b.food+b.drink),v.minFoodBar||0),service=fb*b.service/100,subtotal=fee+fb+service+b.extra;
 let taxable=(v.priceType==='tax-included'&&!quote)?(fb+service+b.extra):subtotal;
-return {total:subtotal+taxable*b.tax/100,annotation:v.priceType==='historical'?'Historical 2025 minimum, plus lodging':v.priceType==='venue-space'?'Wedding rate unconfirmed':v.priceType==='tax-included'&&!quote?'Two-night house rental already included':'Room buyout not included'}}
+return {total:subtotal+taxable*b.tax/100,annotation:v.id==='lightfoot'?'2027 site fee plus separately charged catering and bar (standard drinks $80/person)':v.priceType==='historical'?'Historical 2025 minimum, plus lodging':v.priceType==='venue-space'?'Wedding rate unconfirmed':v.priceType==='tax-included'&&!quote?'Two-night house rental already included':'Room buyout not included'}}
 function budgetResults(){
 let b=readBudget();state.budget=b;persist();
 $('#budget-results').innerHTML=[...venues].sort((a,b)=>a.rank-b.rank).map(v=>{
@@ -179,7 +205,7 @@ let body='Hello,\n\nWe are considering '+v.name+' for our wedding in September 2
 if(!v.email){navigator.clipboard?.writeText('Subject: '+subject+'\n\n'+body);notify('Draft copied. Contact the venue through its website.');return}
 location.href='mailto:'+encodeURIComponent(v.email)+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)}
 function download(content,name,mime){let blob=new Blob([content],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)}
-function exportNotes(){download(JSON.stringify({exported:new Date().toISOString(),date:'September 2027',favorites:state.favorites,updates:state.updates,budget:state.budget,venues:venues.map(v=>({name:v.name,location:v.town,capacity:v.capacity,priceReference:v.baseLabel,overnightConditions:v.stayRule,site:v.site,maps:v.map}))},null,2),'wedding-venue-journal.json','application/json');notify('Journal exported')}
+function exportNotes(){download(JSON.stringify({exported:new Date().toISOString(),date:'September 2027',favorites:state.favorites,updates:state.updates,budget:state.budget,photographers:photographers.map(v=>({name:v.name,packages:v.packages,website:v.website})),venues:venues.map(v=>({name:v.name,location:v.town,capacity:v.capacity,priceReference:v.baseLabel,overnightConditions:v.stayRule,site:v.site,maps:v.map}))},null,2),'wedding-venue-journal.json','application/json');notify('Journal exported')}
 function exportCSV(){
 let fields=[['Name',v=>v.name],['Location',v=>v.town],['Capacity',v=>v.capacity],['Published amount',v=>v.baseLabel],['Stay conditions',v=>v.stayRule],['Status',v=>update(v.id).status||''],['Quote',v=>update(v.id).quote||''],['Notes',v=>update(v.id).notes||''],['Website',v=>v.site]];
 let q=x=>'"'+String(x??'').replace(/"/g,'""')+'"';
@@ -190,6 +216,12 @@ let tab=e.target.closest('[data-tab]');if(tab){activeTab=tab.dataset.tab;detailT
 let a=e.target.closest('[data-action]');if(a){
 let id=a.dataset.id,act=a.dataset.action;
 if(act==='favorite'){e.stopPropagation();toggleSave(id)}
+if(act==='photographer-favorite'){
+ e.stopPropagation();let was=isSaved(id);state.favorites=was?state.favorites.filter(x=>x!==id):[...state.favorites,id];persist();renderGrid();renderShortlist();renderPhotographers();notify(was?'Removed photographer from saved':'Saved photographer');
+}
+if(act==='photographer-save'){
+ $$('[data-field][data-id="'+id+'"]',$('#photographers-view')).forEach(saveField);renderShortlist();notify('Photographer notes saved.');
+}
 if(act==='detail')openDetail(id);
 if(act==='mapfocus')focusMap(id);
 if(act==='email')draftEnquiry(venue(id));
@@ -239,5 +271,5 @@ $('#compare-all').onclick=()=>{compareMode='all';renderCompare()};
 $('#compare-saved').onclick=()=>{compareMode='saved';renderCompare()};
 $('#guest-select').value=String(state.guestCount||75);
 renderGrid();renderShortlist();
-if(['compare','map','shortlist'].includes(location.hash.slice(1)))go(location.hash.slice(1));
+if(['compare','map','shortlist','photographers'].includes(location.hash.slice(1)))go(location.hash.slice(1));
 })();

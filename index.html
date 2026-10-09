@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script defer src="venues.js"></script>
+  <script defer src="photographers.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -27,6 +28,7 @@
       </button>
       <nav class="main-nav" aria-label="Primary navigation">
         <button class="nav-link active" data-nav="discover">Explore venues</button>
+        <button class="nav-link" data-nav="photographers">Photographers</button>
         <button class="nav-link" data-nav="compare">Compare</button>
         <button class="nav-link" data-nav="map">Map</button>
         <button class="nav-link" data-nav="shortlist">Saved <span id="saved-count" class="saved-count">0</span></button>
@@ -43,10 +45,10 @@
       <div class="hero-copy">
         <div class="eyebrow"><span class="eyebrow-line"></span> AN EXPLORATION IN COASTAL CELEBRATIONS</div>
         <h1>Somewhere<br><em>worth gathering.</em></h1>
-        <p class="hero-subtitle">Eight beautiful places. One meaningful day. A carefully researched guide to oceanfront estates, elegant barns and coastal retreats across Nova Scotia.</p>
+        <p class="hero-subtitle">Twelve beautiful places. One meaningful day. A carefully researched guide to oceanfront estates, elegant barns and coastal retreats across Nova Scotia.</p>
         <div class="hero-metas">
           <div><span class="meta-icon">◷</span><strong>September 2027</strong><small>Target celebration</small></div>
-          <div><span class="meta-icon">♧</span><strong>50–100 guests</strong><small>Flexible guest count</small></div>
+          <div><span class="meta-icon">♧</span><strong>75–125 guests</strong><small>Flexible guest count</small></div>
           <div><span class="meta-icon">≋</span><strong>Ocean & scenery</strong><small>Views come first</small></div>
         </div>
         <a class="hero-link" href="#explore" id="explore-link">Explore the venues <span>↗</span></a>
@@ -63,19 +65,19 @@
       <div class="wrap curation-content">
         <span class="curation-star">✳</span>
         <p>Not a wedding directory. <strong>A shortlist that tells you what the brochures don't.</strong></p>
-        <span class="curation-update">RESEARCHED OCT 8, 2026</span>
+        <span class="curation-update">UPDATED OCT 2026</span>
       </div>
     </section>
 
     <section id="discover-view" class="view active wrap">
       <div class="section-heading" id="explore">
-        <div><div class="eyebrow">YOUR CURATED COLLECTION</div><h2>The venues <span class="light-serif">/ 08</span></h2><p>Compare the beautiful parts, the logistics, and the fine print.</p></div>
-        <div class="count-tag"><span class="count-dot"></span><span id="result-count">8</span> VENUES</div>
+        <div><div class="eyebrow">YOUR CURATED COLLECTION</div><h2>The venues <span class="light-serif">/ 12</span></h2><p>Compare the beautiful parts, the logistics, and the fine print.</p></div>
+        <div class="count-tag"><span class="count-dot"></span><span id="result-count">12</span> VENUES</div>
       </div>
       <div class="filter-toolbar">
         <label class="search-box" aria-label="Search venues"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input id="search" type="search" placeholder="Search a venue or location..." autocomplete="off"></label>
         <div class="select-field"><label for="guest-select">GUESTS</label><select id="guest-select"><option value="50">50 guests</option><option value="75" selected>75 guests</option><option value="100">100 guests</option><option value="125">125 guests</option></select></div>
-        <div class="select-field"><label for="region-select">REGION</label><select id="region-select"><option value="">All regions</option><option>HRM & St. Margaret’s Bay</option><option>South Shore</option><option>Eastern Shore</option><option>Northumberland Shore</option></select></div>
+        <div class="select-field"><label for="region-select">REGION</label><select id="region-select"><option value="">All regions</option><option>HRM & St. Margaret’s Bay</option><option>South Shore</option><option>Eastern Shore</option><option>Northumberland Shore</option><option>Annapolis Valley</option><option>HRM & Halifax Waterfront</option></select></div>
         <div class="select-field"><label for="sort-select">SORT</label><select id="sort-select"><option value="curated">Our picks</option><option value="capacity">Largest capacity</option><option value="price">Known rental price</option><option value="alpha">Venue name</option></select></div>
       </div>
       <div class="filter-subrow">
@@ -85,16 +87,26 @@
       <div id="venues-grid" class="venues-grid" aria-live="polite"></div>
     </section>
 
+    <section id="photographers-view" class="view wrap">
+      <div class="section-heading">
+        <div><div class="eyebrow">YOUR WEDDING CREATIVE TEAM</div><h2>Photographers<span class="light-serif">.</span></h2>
+          <p>Documentary photography portfolios, published package costs and your contact notes.</p></div>
+        <div class="count-tag"><span class="count-dot"></span>1 PHOTOGRAPHER</div>
+      </div>
+      <div id="photographers-content"></div>
+      <div class="privacy-note">Notes and status are saved in this browser and included in the journal export. Prices are published references, not September 2027 quotes.</div>
+    </section>
+
     <section id="compare-view" class="view wrap">
-      <div class="section-heading"><div><div class="eyebrow">SIDE BY SIDE</div><h2>Compare the details<span class="light-serif">.</span></h2><p>Start with saved venues, or compare all eight. Scroll horizontally on mobile.</p></div></div>
-      <div class="compare-controls"><button class="btn btn-outline" id="compare-all">Compare all 8</button><button class="btn btn-outline" id="compare-saved">Only my saved venues</button><button class="btn btn-ink" id="compare-export">Export comparison ↗</button></div>
+      <div class="section-heading"><div><div class="eyebrow">SIDE BY SIDE</div><h2>Compare the details<span class="light-serif">.</span></h2><p>Start with saved venues, or compare all twelve. Scroll horizontally on mobile.</p></div></div>
+      <div class="compare-controls"><button class="btn btn-outline" id="compare-all">Compare all 12</button><button class="btn btn-outline" id="compare-saved">Only my saved venues</button><button class="btn btn-ink" id="compare-export">Export comparison ↗</button></div>
       <div class="table-scroll"><table class="comparison-table" id="comparison-table"></table></div>
       <p class="fine-print">Published figures are not venue quotes. Capacity and buyout conditions must be reconfirmed for September 2027.</p>
     </section>
 
     <section id="map-view" class="view wrap">
-      <div class="section-heading"><div><div class="eyebrow">THE COASTLINE</div><h2>Find your setting<span class="light-serif">.</span></h2><p>Eight locations from St. Margaret’s Bay to the Northumberland Shore.</p></div></div>
-      <div class="map-layout"><div class="map-panel" id="venue-map" role="application" aria-label="Map of the eight wedding venues"><div class="map-fallback">Map requires an internet connection. Use the links beside the map to open each venue in Google Maps.</div></div><div id="map-list" class="map-list"></div></div>
+      <div class="section-heading"><div><div class="eyebrow">THE COASTLINE</div><h2>Find your setting<span class="light-serif">.</span></h2><p>Twelve locations, from Halifax Harbour to the Annapolis Valley and South Shore.</p></div></div>
+      <div class="map-layout"><div class="map-panel" id="venue-map" role="application" aria-label="Map of the twelve wedding venues"><div class="map-fallback">Map requires an internet connection. Use the links beside the map to open each venue in Google Maps.</div></div><div id="map-list" class="map-list"></div></div>
     </section>
 
     <section id="shortlist-view" class="view wrap">

@@ -262,3 +262,466 @@ window.VENUES = [
  imageCredit:"Oceanstone Resort official 2026/2027 wedding gallery."
 }
 ];
+
+// Additional venues researched October 2026. Capacity and prices require a September 2027 quote.
+window.VENUES.push(
+{
+  "id": "lightfoot",
+  "name": "Lightfoot & Wolfville Vineyards",
+  "town": "Wolfville",
+  "region": "Annapolis Valley",
+  "lat": 45.09619,
+  "lng": -64.3361,
+  "archetype": "Elegant vineyard & barrel cellar",
+  "style": "Vineyard elegance",
+  "rank": 3.5,
+  "score": "Architectural winery, lush vineyards and Minas Basin views. The 2027 wedding guide provides unusually clear pricing and a midnight music cutoff.",
+  "capacity": 130,
+  "capacityNote": "Official 2027 wedding brochure sets a 130-guest maximum. Confirm any minimum guest commitment for September Saturdays.",
+  "stay": "No guest bedrooms at the winery. Nearby options in Wolfville include inns, boutique hotels and vacation accommodations.",
+  "beds": null,
+  "stayRule": "No on-site accommodation buyout advertised; book guests separately nearby.",
+  "stayFlag": "Hotels in Wolfville nearby",
+  "base": 10500,
+  "baseLabel": "Official 2027 September wedding hospitality fee: $10,500 before 14% HST, food, beverages and automatic gratuity. July and August are $12,500. Confirm long-weekend surcharges.",
+  "priceType": "published",
+  "minFoodBar": 0,
+  "location": "11143 Evangeline Trail, Wolfville, NS B4P 2R1",
+  "map": "https://www.google.com/maps/search/?api=1&query=Lightfoot+and+Wolfville+Vineyards+Nova+Scotia",
+  "site": "https://lightfootandwolfville.com/pages/weddings",
+  "packagePdf": "https://cdn.shopify.com/s/files/1/0013/4103/0453/files/L_W_Wedding_Package_2027-Digital-Spreads_-_MAR.7.2026.pdf?v=1773144337",
+  "sources": [
+    [
+      "Official 2027 wedding package",
+      "https://cdn.shopify.com/s/files/1/0013/4103/0453/files/L_W_Wedding_Package_2027-Digital-Spreads_-_MAR.7.2026.pdf?v=1773144337"
+    ],
+    [
+      "Wedding bookings",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "Accommodation suggestions",
+      "https://lightfootandwolfville.com/pages/visit"
+    ]
+  ],
+  "email": "kori@lightfootandwolfville.com",
+  "phone": "902-542-7774",
+  "hero": "assets/lightfoot-hero.jpg",
+  "images": [
+    [
+      "assets/gallery/lightfoot-vineyard-building.jpg",
+      "Winery exterior and vineyards",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-vineyard-minas.jpg",
+      "Rows of vineyards looking toward Minas Basin",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-barrel-cellar.jpg",
+      "Candlelit barrel cellar dinner",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-barrel-cellar-guests.jpg",
+      "Guests at the barrel cellar dining table",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-vineyard-ceremony.jpg",
+      "Outdoor vineyard ceremony",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-tasting-room.jpg",
+      "Indoor tasting room and bar",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-venue-exterior.jpg",
+      "Terrace and winery architecture",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-candlelit-dining.jpg",
+      "Romantic evening barrel cellar tables",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ],
+    [
+      "assets/gallery/lightfoot-ceremony-arbour.jpg",
+      "Outdoor ceremony arbour",
+      "https://lightfootandwolfville.com/pages/weddings"
+    ]
+  ],
+  "overview": "A design-forward working winery overlooking vineyards, Cape Blomidon and the Minas Basin. Dinner in a candlelit barrel cellar feels polished and distinctive, with a covered tasting room for dancing. This is countryside vineyard elegance rather than a rustic barn.",
+  "ceremony": "Vineyard Ceremony Terrace with green-space views, wood arbor, benches, aisle barrels, microphone and speaker. The standard September ceremony begins at 6 PM. Indoor weather backup moves to the Gallery and Tasting Room.",
+  "reception": "Cocktail hour by the vines; seated dinner in the working Barrel Cellar; dancing and evening reception in the Tasting Room and Gallery. 2027 wedding timeline has music stop at midnight and property cleared by 12:30 AM.",
+  "included": [
+    "Day-of venue coordinator and staffing",
+    "Use of ceremony grounds and rain backup",
+    "Ceremony benches and arbor, PA and signing area",
+    "Harvest tables, Chiavari chairs, place settings, glassware and napkins",
+    "Tidal Loft and Study wedding-party preparation suites from 9:30 AM",
+    "Complimentary lunch for the wedding party and tasting for two"
+  ],
+  "extra": [
+    "Site fee of $10,500 in September 2027",
+    "Food and beverage packages separate: $22 passed canapés; mains $35-$60; starters from $16; desserts and late-night snacks extra",
+    "Bar packages: $60 cash bar, $80 standard or $110 open bar per person",
+    "Automatic gratuity on food and beverages (percentage not specified in the 2027 guide)",
+    "Floral, décor, photography, entertainment and vendor setup"
+  ],
+  "risks": [
+    "A $10,500 site fee is only the beginning: dinner and drinks are charged per person",
+    "The winery may remain open to the public unless a separately priced exclusivity package is purchased",
+    "Music ends at midnight, all guests and vendors exit by 12:30 AM",
+    "No overnight accommodations at the winery"
+  ],
+  "questions": [
+    "What is the all-in September 2027 Saturday estimate for 100 guests with passed canapés, three-course dinner and standard or open bar?",
+    "Is there a minimum number of guests or minimum F&B spend on a September weekend?",
+    "What exact gratuity is automatically charged?",
+    "Can guests see the entire property privately or will the restaurant remain open?",
+    "Can we see Barrel Cellar seated layouts for 100 and 125?",
+    "How does a rain ceremony transition into the dinner spaces?"
+  ],
+  "imageCredit": "Official Lightfoot & Wolfville 2027 Wedding Package. Photos credited in brochure to its contributing photographers."
+},
+{
+  "id": "whitepoint",
+  "name": "White Point Beach Resort",
+  "town": "Hunts Point",
+  "region": "South Shore",
+  "lat": 43.9655,
+  "lng": -64.733,
+  "archetype": "Full-service Atlantic beach resort",
+  "style": "Classic seaside resort",
+  "rank": 6.5,
+  "score": "Sweeping surf and extensive on-site lodging, plus a genuine indoor ocean-view event room. Outdoor ceremony cost is unusually high.",
+  "capacity": 180,
+  "capacityNote": "Atlantic Room advertises up to 180 seated event guests; Lakeside Lodge up to 100. Confirm the dance floor arrangement.",
+  "stay": "Extensive on-site lodging: main lodge guest rooms, cottages, beachfront houses, Ocean Lodge, glomes and treehouses.",
+  "beds": null,
+  "stayRule": "No confirmed compulsory accommodation buyout. Ask about any room block or minimum nights for September weddings.",
+  "stayFlag": "Extensive resort lodging",
+  "base": null,
+  "baseLabel": "Wedding reception venue rental and 2027 dinner prices require a quote. Official website lists a separate $6,500 outdoor ceremony fee; FAQ still says 15% HST, which may be outdated relative to current 14% NS HST. Historical 2024 buffet $58/person is not a 2027 price.",
+  "priceType": "unknown",
+  "minFoodBar": 0,
+  "location": "75 White Point Beach Resort Road, Hunts Point, NS B0T 1G0",
+  "map": "https://www.google.com/maps/search/?api=1&query=White+Point+Beach+Resort+Nova+Scotia",
+  "site": "https://www.whitepoint.com/plan-an-event/weddings/",
+  "sources": [
+    [
+      "Wedding overview",
+      "https://www.whitepoint.com/plan-an-event/weddings/"
+    ],
+    [
+      "Official ceremony costs and restrictions",
+      "https://www.whitepoint.com/our-resort/faq/"
+    ],
+    [
+      "Reception capacities",
+      "https://www.whitepoint.com/plan-an-event/venues/"
+    ],
+    [
+      "Historical 2024 wedding menus",
+      "https://www.whitepoint.com/content/uploads/2024/04/WPBR-Wedding-Menus-2024-Website-Copy.pdf"
+    ]
+  ],
+  "email": "greatday@whitepoint.com",
+  "phone": "1-800-565-5068",
+  "hero": "assets/whitepoint-hero.jpg",
+  "images": [
+    [
+      "assets/gallery/whitepoint-beachfront-aerial.jpg",
+      "Atlantic oceanfront aerial at White Point",
+      "https://www.whitepoint.com/our-resort/"
+    ],
+    [
+      "assets/gallery/whitepoint-ocean-lawn-wedding.jpg",
+      "Lawn wedding with an Atlantic Ocean backdrop",
+      "https://www.whitepoint.com/plan-an-event/venues/"
+    ],
+    [
+      "assets/gallery/whitepoint-atlantic-room.jpg",
+      "Atlantic Room reception setup",
+      "https://www.whitepoint.com/plan-an-event/venues/"
+    ],
+    [
+      "assets/gallery/whitepoint-resort-sunset.jpg",
+      "White Point coastal resort at sunset",
+      "https://www.whitepoint.com/our-resort/"
+    ],
+    [
+      "assets/gallery/whitepoint-lawn-ceremony.jpg",
+      "Wedding ceremony on the oceanside lawn",
+      "https://www.whitepoint.com/plan-an-event/weddings/"
+    ],
+    [
+      "assets/gallery/whitepoint-beach-and-lodge.jpg",
+      "Oceanfront lodge and beach",
+      "https://www.whitepoint.com/our-resort/"
+    ]
+  ],
+  "overview": "A historic Atlantic beach resort with a proper oceanfront ballroom, dramatic coastal ceremony lawns and lodging for numerous guests. White Point is more established full-service beach holiday than private luxury estate.",
+  "ceremony": "Ceremonies are NOT held on the sand beach. The ocean-facing lawn in front of Ocean Lodge is allowed. The listed $6,500 ceremony fee includes setup, chairs, rain location, sound equipment and music technician, with onsite reception required.",
+  "reception": "Atlantic Room has large windows and ocean views with up to 180 guests in certain configurations. Lakeside Lodge is suitable for up to 100 guests. Catering and bar service are provided by the resort.",
+  "included": [
+    "Full-service events team and dedicated catering facilities",
+    "Multiple ocean and lakeside ceremony options with indoor weather backup",
+    "On-site room, cottage and house accommodations",
+    "Outdoor ceremony fee includes chairs, aisle, microphone, technician and room reset"
+  ],
+  "extra": [
+    "Reception room rate, per-person 2027 food/bar menus, service charges and taxes",
+    "Outdoor oceanfront ceremony carries separate published $6,500 fee",
+    "Photographer, DJ, flowers, décor and personal wedding services",
+    "Rooms and suites for overnight guests booked separately"
+  ],
+  "risks": [
+    "The resort website lists $6,500 for an outdoor ceremony, on top of reception costs",
+    "Outdoor ceremonies cannot be directly on the sandy beach",
+    "Outside catering not permitted except wedding cake",
+    "Busy family resort rather than a private property; room minimums not confirmed"
+  ],
+  "questions": [
+    "For 100 guests in September 2027, what is a complete reception and oceanside lawn ceremony quote?",
+    "Is the $6,500 outdoor ceremony fee still current, and what is the 2027 tax rate applied?",
+    "How much is the Atlantic Room and is there a food and beverage minimum?",
+    "Can a 100-person group use Lakeside Lodge with a dance floor?",
+    "Is an overnight room block mandatory?",
+    "What time must DJ music and the bar end?"
+  ],
+  "imageCredit": "White Point Beach Resort official wedding and event galleries."
+},
+{
+  "id": "cable",
+  "name": "The Cable Wharf",
+  "town": "Downtown Halifax",
+  "region": "HRM & Halifax Waterfront",
+  "lat": 44.6474,
+  "lng": -63.5701,
+  "archetype": "Harbourfront restaurant & private events",
+  "style": "Modern harbourfront",
+  "rank": 4.2,
+  "score": "Harbour views, elegant white dining areas and a genuine over-water ceremony patio. No on-site overnight rooms, but hotels are steps away.",
+  "capacity": 300,
+  "capacityNote": "RCR lists overall venue capacity of 300 for buyouts and private events, NOT a confirmed 300-seat wedding dinner. Exact dinner + dancing + ceremony capacities must be verified.",
+  "stay": "No on-site guest accommodation. Downtown Halifax hotels, including the Muir and other waterfront hotels, are nearby.",
+  "beds": null,
+  "stayRule": "No accommodation buyout advertised. Guests can book hotels individually.",
+  "stayFlag": "Downtown hotels nearby",
+  "base": null,
+  "baseLabel": "Venue buyout, venue fee, food/beverage minimum and 2027 wedding catering costs are quote-only. RCR advertises full buyouts and a general event capacity of 300, which is not a seated dinner count.",
+  "priceType": "unknown",
+  "minFoodBar": 0,
+  "location": "1751 Lower Water Street, Halifax, NS B3J 1S5",
+  "map": "https://www.google.com/maps/search/?api=1&query=Cable+Wharf+Kitchen+Patio+Halifax",
+  "site": "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/",
+  "sources": [
+    [
+      "Official RCR events and wedding page",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "Real Cable Wharf wedding gallery",
+      "https://janelleconnorphotography.com/2024/06/20/mas-waterfront-wedding-at-the-cable-wharf/"
+    ]
+  ],
+  "email": "",
+  "phone": "782-482-0800",
+  "hero": "assets/cable-hero.jpg",
+  "images": [
+    [
+      "assets/gallery/cable-halifax-harbour.jpg",
+      "Cable Wharf overlooking Halifax Harbour",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-patio-ceremony.jpg",
+      "Waterfront ceremony arch and chairs",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-reception-interior.jpg",
+      "Elegant wedding dinner setup inside",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-outdoor-ceremony.jpg",
+      "Outdoor ceremony seating on the wharf",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-harbour-patio.jpg",
+      "Sunset patio with harbour skyline",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-dining-room.jpg",
+      "Bright indoor dining room",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-reception-hall.jpg",
+      "Wedding reception tables in harbourfront hall",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-guests-dining.jpg",
+      "Guests enjoying a reception overlooking the harbour",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ],
+    [
+      "assets/gallery/cable-harbour-windows.jpg",
+      "Harbour view from the windows",
+      "https://www.rcr.ca/restaurants/cable-wharf-kitchen-patio/"
+    ]
+  ],
+  "overview": "A bright harbourfront restaurant perched on Halifax Harbour with a waterside patio overlooking Georges Island and the downtown waterfront. Clean architectural finishes, white furniture and lively downtown access suit a modern non-rustic celebration.",
+  "ceremony": "Waterfront patio ceremonies appear in the official wedding gallery, with covered indoor alternative potential. Verify wind, rain, tide exposure, chair layout and patio exclusivity.",
+  "reception": "White interior dining space with large windows and harbour views, alongside the outdoor deck. RCR offers full venue buyouts, culinary service and event coordination; request seated wedding capacity and dancing floor plan.",
+  "included": [
+    "Existing restaurant dining facilities and waterfront patio",
+    "RCR hospitality team and on-site culinary operation",
+    "Potential private buyout and restaurant food and bar service",
+    "Easy access to Halifax waterfront hotels and downtown transportation"
+  ],
+  "extra": [
+    "Wedding venue buyout or minimum spend: not published",
+    "Wedding menu, open bar, staffing/gratuity and ceremony fee need itemized quotation",
+    "Photography, DJ, decor, formal floral arrangements and transportation"
+  ],
+  "risks": [
+    "300 capacity is for overall private events, not a guaranteed 300-seat dinner with dancing",
+    "Restaurant normally operates until 10 PM; wedding event extension must be confirmed",
+    "Dockside conditions can be windy or exposed in September",
+    "No on-site hotel rooms; full indoor rain backup must be checked"
+  ],
+  "questions": [
+    "Can 100 guests have a seated dinner, wedding ceremony and dancing in one private buyout?",
+    "What is the 2027 September Saturday buyout fee or F&B minimum?",
+    "How late can our DJ, dancing and bar run beyond normal restaurant hours?",
+    "Can the patio be reserved exclusively for our ceremony and is there an indoor rain option?",
+    "What is included with RCR catering, bar, chairs, setup and cleanup?"
+  ],
+  "imageCredit": "RCR Hospitality Group official Cable Wharf events gallery."
+},
+{
+  "id": "saraguay",
+  "name": "Saraguay House",
+  "town": "Halifax",
+  "region": "HRM & Halifax Waterfront",
+  "lat": 44.62293,
+  "lng": -63.58403,
+  "archetype": "Private Northwest Arm yacht-club estate",
+  "style": "Classic waterfront",
+  "rank": 2.1,
+  "score": "A standout value for formal waterfront weddings: sailboats, elegant indoor dining and transparent published rental and catering pricing.",
+  "capacity": 115,
+  "capacityNote": "Official venue listing gives a 115-person limit, subject to change. Confirm dance floor, ceremony and 100-115 guest setups.",
+  "stay": "No overnight accommodations on the property; guests can stay at Halifax hotels or rentals a short drive away.",
+  "beds": null,
+  "stayRule": "No on-site lodging requirement identified.",
+  "stayFlag": "Halifax lodging nearby",
+  "base": 3000,
+  "baseLabel": "Current official wedding listing: $3,000 exclusive-use venue rental plus $650 on-site ceremony; three-course dinners $50-$66 per guest before charges; $2,000 booking deposit credited toward bill. All are subject to quote for 2027.",
+  "priceType": "published",
+  "minFoodBar": 0,
+  "location": "2310 Purcells Cove Road, Halifax, NS B3P 1C7",
+  "map": "https://www.google.com/maps/search/?api=1&query=Saraguay+House+Halifax+Nova+Scotia",
+  "site": "https://www.rnsys.com/booking-your-event",
+  "sources": [
+    [
+      "Official Saraguay House wedding pricing",
+      "https://www.rnsys.com/booking-your-event"
+    ],
+    [
+      "Wedding photography of the grounds",
+      "https://sandraadamson.com/royal-nova-scotia-yacht-squadron-wedding/"
+    ],
+    [
+      "Older 2022 wedding brochure, historical hours",
+      "https://static1.squarespace.com/static/5ff47b94d8589f141e514a30/t/627bc6df8930fd15b02a4845/1652279007567/rnsys%2Bwedding%2Bbrochure%2Bfor%2Bsaraguay%2Bhouse%2B2022%2B-%2Brevised.pdf"
+    ]
+  ],
+  "email": "functionmanager@rnsys.com",
+  "phone": "902-477-5653",
+  "hero": "assets/saraguay-hero.jpg",
+  "images": [
+    [
+      "assets/gallery/saraguay-waterfront-dining.jpg",
+      "Bright waterfront dining room at Saraguay House",
+      "https://www.rnsys.com/booking-your-event"
+    ],
+    [
+      "assets/gallery/saraguay-ceremony-lawn.jpg",
+      "Ceremony chairs with Northwest Arm backdrop",
+      "https://sandraadamson.com/royal-nova-scotia-yacht-squadron-wedding/"
+    ],
+    [
+      "assets/gallery/saraguay-sailboat-view.jpg",
+      "Sailboats visible through Saraguay House windows",
+      "https://www.rnsys.com/booking-your-event"
+    ],
+    [
+      "assets/gallery/saraguay-garden-ceremony.jpg",
+      "Outdoor wedding ceremony on the lawn",
+      "https://sandraadamson.com/royal-nova-scotia-yacht-squadron-wedding/"
+    ],
+    [
+      "assets/gallery/saraguay-dock-sailboats.jpg",
+      "Couple on waterfront dock beside sailboats",
+      "https://sandraadamson.com/royal-nova-scotia-yacht-squadron-wedding/"
+    ],
+    [
+      "assets/gallery/saraguay-reception.jpg",
+      "Wedding celebrations in the reception room",
+      "https://sandraadamson.com/royal-nova-scotia-yacht-squadron-wedding/"
+    ],
+    [
+      "assets/gallery/saraguay-coastal-grounds.jpg",
+      "Bride and groom beside Northwest Arm",
+      "https://sandraadamson.com/royal-nova-scotia-yacht-squadron-wedding/"
+    ],
+    [
+      "assets/gallery/saraguay-guests-arrival.jpg",
+      "Guests walking down to the waterfront ceremony",
+      "https://www.rnsys.com/booking-your-event"
+    ]
+  ],
+  "overview": "An elegant house and landscaped grounds beside the Northwest Arm, overlooking sailboats and the marina. Comfortable, classic waterfront rather than rustic or traditional beach resort. Close enough to Halifax for guests to travel easily.",
+  "ceremony": "Outdoor waterfront lawn and dockside ceremony settings, with an on-site ceremony fee of $650 under the currently published package. Ask for formal indoor rain backup.",
+  "reception": "Fully catered indoor celebration at Saraguay House with views of the Northwest Arm; published wedding capacity 115. Dinner pricing $50-$66 for a three-course meal, with event staff provided.",
+  "included": [
+    "Exclusive venue use for the event under the rental",
+    "Event staff, setup staff and event supervisor",
+    "Tables, chairs, linens, glassware and tableware",
+    "Podium, projector, microphone and signing table",
+    "In-house catering and bar staffing included in event service structure"
+  ],
+  "extra": [
+    "Outdoor wedding ceremony $650 on top of $3,000 rental",
+    "Three-course plated dinner $50-$66 per person plus service charges and HST",
+    "Appetizers, bar purchases, decor, flowers and external photographers",
+    "Booking deposit of $2,000, applied to the event invoice"
+  ],
+  "risks": [
+    "115 is the published maximum for the house and changes require confirmation",
+    "No on-site accommodation",
+    "Current event closing time is not specified. An older 2022 brochure allowed venue access until 12:30 AM but is not a 2027 guarantee",
+    "Outside catering may not be permitted"
+  ],
+  "questions": [
+    "Can you provide an itemized Saturday September 2027 quote for 100 guests with ceremony, cocktails, dinner and hosted bar?",
+    "Can 110-115 seated guests fit with a comfortable dance floor?",
+    "What is the confirmed DJ/bar closing time, and when must guests leave?",
+    "What are your service charge and bar pricing structures?",
+    "What does your indoor rain ceremony plan look like?",
+    "Can we tour the house and see reception floor plans?"
+  ],
+  "imageCredit": "Royal Nova Scotia Yacht Squadron website and wedding photographs by Sandra Adamson Photography."
+}
+);

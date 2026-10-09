@@ -1,6 +1,6 @@
 # The Venue Journal
 
-An interactive, responsive wedding venue planning website for eight shortlisted locations across Nova Scotia. Target wedding period: **September 2027**, around **50–100 guests**.
+An interactive, responsive wedding venue planning website for twelve shortlisted locations across Nova Scotia. Target wedding period: **September 2027**, around **75–125 guests**.
 
 ## Preview locally
 
@@ -22,6 +22,10 @@ Then open [http://localhost:8100](http://localhost:8100) in your browser. There 
 6. Anchorage House & Cottages, Hubbards
 7. Ocean Bay View Luxury Guesthouse, Musquodoboit Harbour
 8. Oceanstone Resort & Spa, Indian Harbour
+9. Lightfoot & Wolfville Vineyards, Wolfville
+10. White Point Beach Resort, Hunts Point
+11. The Cable Wharf, downtown Halifax
+12. Saraguay House, Halifax
 
 Each profile includes capacities and caveats, reception and ceremony descriptions, on-site accommodation, mandatory booking conditions, verified publicly advertised rate references where available, included and excluded items, known restrictions, enquiry questions, primary sources, and photos.
 
@@ -78,3 +82,15 @@ Each venue has an 11–13-image gallery featuring ceremony and reception spaces,
 Venue cards and profile headers show subtle previous/next controls **only on mouse hover** or keyboard focus. On touchscreens, swipe horizontally across a featured photo to switch images. Click or tap a photo or the View photos link to open the large gallery at the selected image.
 
 Typography has been increased across the site for improved readability on desktop and mobile.
+
+### October 2026 additions
+
+Four additional venues are included with curated local galleries and full package notes: **Lightfoot & Wolfville Vineyards, White Point Beach Resort, The Cable Wharf, and Saraguay House**.
+
+Lightfoot & Wolfville's complete **2027 official wedding package PDF** is saved in assets/packages/lightfoot-wolfville-2027-official.pdf. Its September hospitality fee is $10,500 before food, beverages, gratuity and tax. The standard venue timeline ends at 12:30 AM (music by midnight). The brochure states that the winery is not fully private without an additional exclusivity package.
+
+White Point publishes a $6,500 oceanside lawn ceremony fee (its website still displays an outdated 15% HST number, so obtain a new quote), but its September 2027 reception rental and menus are unverified. No wedding ceremony is permitted on the sandy beach. Cable Wharf's published general private-events capacity of 300 is **not confirmed as a seated wedding capacity**. Saraguay House's published wedding rental is $3,000 + $650 ceremony, with 115 capacity and food $50-$66 per head before applicable charges. All rates require fresh quotes.
+
+### Photographers
+
+A separate **Photographers** tab includes Hugh Whitaker, a sample portfolio image, his official 4-, 8- and 10-hour package pricing, optional upgrades, source links, contact page, and locally saved enquiry/quote notes. The photographer can be saved to the shared shortlist and included in the journal export. Portfolio photos and wedding brochure imagery remain copyright of their owners and are included for private planning reference only.
